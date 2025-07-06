@@ -49,7 +49,7 @@ class DatabaseResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> DatabaseCheckHealthResponse:
-        """Check MongoDB database health and connectivity"""
+        """Check MongoDB database connectivity and retrieve health statistics."""
         return self._get(
             "/v1/database/health",
             options=make_request_options(
@@ -89,7 +89,7 @@ class AsyncDatabaseResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> DatabaseCheckHealthResponse:
-        """Check MongoDB database health and connectivity"""
+        """Check MongoDB database connectivity and retrieve health statistics."""
         return await self._get(
             "/v1/database/health",
             options=make_request_options(

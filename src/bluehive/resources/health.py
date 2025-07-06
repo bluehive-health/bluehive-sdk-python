@@ -49,7 +49,7 @@ class HealthResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> HealthCheckResponse:
-        """Health check endpoint"""
+        """Check the service health and ensure the API is running properly."""
         return self._get(
             "/v1/health",
             options=make_request_options(
@@ -89,7 +89,7 @@ class AsyncHealthResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> HealthCheckResponse:
-        """Health check endpoint"""
+        """Check the service health and ensure the API is running properly."""
         return await self._get(
             "/v1/health",
             options=make_request_options(

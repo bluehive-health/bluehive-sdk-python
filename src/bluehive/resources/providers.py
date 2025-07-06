@@ -56,7 +56,7 @@ class ProvidersResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ProviderLookupResponse:
         """
-        Look up providers by NPI number, first name, or last name
+        Search for healthcare providers by NPI number, name, or location proximity.
 
         Args:
           firstname: Provider first name
@@ -131,7 +131,7 @@ class AsyncProvidersResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ProviderLookupResponse:
         """
-        Look up providers by NPI number, first name, or last name
+        Search for healthcare providers by NPI number, name, or location proximity.
 
         Args:
           firstname: Provider first name
