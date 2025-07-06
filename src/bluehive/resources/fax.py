@@ -53,7 +53,7 @@ class FaxResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> FaxListProvidersResponse:
-        """Get list of available fax providers and their configuration status"""
+        """Get a list of available fax providers and their configuration status."""
         return self._get(
             "/v1/fax/providers",
             options=make_request_options(
@@ -74,7 +74,7 @@ class FaxResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> FaxRetrieveStatusResponse:
         """
-        Get the status of a fax by its ID
+        Retrieve the current status and details of a fax by its ID.
 
         Args:
           extra_headers: Send extra headers
@@ -111,7 +111,7 @@ class FaxResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> FaxSendResponse:
         """
-        Send a fax document to a specified number
+        Send a fax document to a specified number using the configured fax provider.
 
         Args:
           to: Recipient fax number (E.164 format preferred)
@@ -179,7 +179,7 @@ class AsyncFaxResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> FaxListProvidersResponse:
-        """Get list of available fax providers and their configuration status"""
+        """Get a list of available fax providers and their configuration status."""
         return await self._get(
             "/v1/fax/providers",
             options=make_request_options(
@@ -200,7 +200,7 @@ class AsyncFaxResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> FaxRetrieveStatusResponse:
         """
-        Get the status of a fax by its ID
+        Retrieve the current status and details of a fax by its ID.
 
         Args:
           extra_headers: Send extra headers
@@ -237,7 +237,7 @@ class AsyncFaxResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> FaxSendResponse:
         """
-        Send a fax document to a specified number
+        Send a fax document to a specified number using the configured fax provider.
 
         Args:
           to: Recipient fax number (E.164 format preferred)
