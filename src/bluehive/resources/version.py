@@ -49,7 +49,7 @@ class VersionResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> VersionRetrieveResponse:
-        """Get current API version"""
+        """Retrieve the current version of the BlueHive API."""
         return self._get(
             "/v1/version",
             options=make_request_options(
@@ -89,7 +89,7 @@ class AsyncVersionResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> VersionRetrieveResponse:
-        """Get current API version"""
+        """Retrieve the current version of the BlueHive API."""
         return await self._get(
             "/v1/version",
             options=make_request_options(
