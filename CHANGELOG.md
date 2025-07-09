@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-07-09)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Chores
+
+* **internal:** bump pinned h11 dep ([77b8495](https://github.com/bluehive-health/bluehive-sdk-python/commit/77b84958a99fea04743c4aaf300731dedc61da3a))
+* **package:** mark python 3.13 as supported ([e58a361](https://github.com/bluehive-health/bluehive-sdk-python/commit/e58a36108c35a42d3f665ac1972fe20d4afd7c54))
+
 ## 0.1.0-alpha.1 (2025-07-06)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
