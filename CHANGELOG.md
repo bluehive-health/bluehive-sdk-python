@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-07-10)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Bug Fixes
+
+* **parsing:** correctly handle nested discriminated unions ([15d178d](https://github.com/bluehive-health/bluehive-sdk-python/commit/15d178d4a1ca566cff253150d6ee4e0ea55d9e2b))
+
 ## 0.1.0-alpha.2 (2025-07-09)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
