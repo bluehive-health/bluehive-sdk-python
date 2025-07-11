@@ -1,6 +1,7 @@
 # BlueHive Python API library
 
-[![PyPI version](<https://img.shields.io/pypi/v/bluehive.svg?label=pypi%20(stable)>)](https://pypi.org/project/bluehive/)
+<!-- prettier-ignore -->
+[![PyPI version](https://img.shields.io/pypi/v/bluehive.svg?label=pypi%20(stable))](https://pypi.org/project/bluehive/)
 
 The BlueHive Python library provides convenient access to the BlueHive REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
