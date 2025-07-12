@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-07-12)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Bug Fixes
+
+* **client:** don't send Content-Type header on GET requests ([2c2bbb9](https://github.com/bluehive-health/bluehive-sdk-python/commit/2c2bbb99f7774aeb7eaaf955c188819794376adc))
+
+
+### Chores
+
+* **readme:** fix version rendering on pypi ([933fd60](https://github.com/bluehive-health/bluehive-sdk-python/commit/933fd60ff623cb82bc3017b5180c73fea804b72a))
+
 ## 0.1.0-alpha.3 (2025-07-10)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
