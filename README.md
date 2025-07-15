@@ -79,7 +79,6 @@ pip install --pre bluehive[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
-import os
 import asyncio
 from bluehive import DefaultAioHttpClient
 from bluehive import AsyncBlueHive
@@ -87,7 +86,7 @@ from bluehive import AsyncBlueHive
 
 async def main() -> None:
     async with AsyncBlueHive(
-        api_key=os.environ.get("BLUEHIVE_API_KEY"),  # This is the default and can be omitted
+        api_key="My API Key",
         http_client=DefaultAioHttpClient(),
     ) as client:
         response = await client.health.check()
