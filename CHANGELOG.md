@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-07-22)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* clean up environment call outs ([3277aa1](https://github.com/bluehive-health/bluehive-sdk-python/commit/3277aa128c028148a893af9e23ac74ac0349654a))
+
+
+### Bug Fixes
+
+* **parsing:** ignore empty metadata ([937f49a](https://github.com/bluehive-health/bluehive-sdk-python/commit/937f49a01c0c6e7ac45880c16f1006b74bfb6133))
+
 ## 0.1.0-alpha.4 (2025-07-12)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
