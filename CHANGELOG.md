@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-07-23)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Bug Fixes
+
+* **parsing:** parse extra field types ([cbedac0](https://github.com/bluehive-health/bluehive-sdk-python/commit/cbedac003fe3de81d86cf69dfc55badf63a8caa4))
+
 ## 0.1.0-alpha.5 (2025-07-22)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
