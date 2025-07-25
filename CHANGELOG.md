@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-07-25)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Chores
+
+* **project:** add settings file for vscode ([c6ce060](https://github.com/bluehive-health/bluehive-sdk-python/commit/c6ce06020743ba8cf316a44f0694e61710b61edb))
+
 ## 0.1.0-alpha.6 (2025-07-23)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
