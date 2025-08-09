@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-08-09)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **client:** support file upload requests ([97b5965](https://github.com/bluehive-health/bluehive-sdk-python/commit/97b59652bb608e71d907eac2edf2e31e9971f691))
+
+
+### Chores
+
+* **internal:** fix ruff target version ([14647cc](https://github.com/bluehive-health/bluehive-sdk-python/commit/14647cc4fffa3f022dded15d158a84f34dc433b9))
+* **project:** add settings file for vscode ([c6ce060](https://github.com/bluehive-health/bluehive-sdk-python/commit/c6ce06020743ba8cf316a44f0694e61710b61edb))
+* update @stainless-api/prism-cli to v5.15.0 ([85b2246](https://github.com/bluehive-health/bluehive-sdk-python/commit/85b2246ab0b26cc8efb0756893177dafa517b86a))
+
 ## 0.1.0-alpha.6 (2025-07-23)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
