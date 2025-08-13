@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestFax:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list_providers(self, client: BlueHive) -> None:
         fax = client.fax.list_providers()
         assert_matches_type(FaxListProvidersResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_list_providers(self, client: BlueHive) -> None:
         response = client.fax.with_raw_response.list_providers()
@@ -33,7 +33,7 @@ class TestFax:
         fax = response.parse()
         assert_matches_type(FaxListProvidersResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_list_providers(self, client: BlueHive) -> None:
         with client.fax.with_streaming_response.list_providers() as response:
@@ -45,7 +45,7 @@ class TestFax:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_status(self, client: BlueHive) -> None:
         fax = client.fax.retrieve_status(
@@ -53,7 +53,7 @@ class TestFax:
         )
         assert_matches_type(FaxRetrieveStatusResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve_status(self, client: BlueHive) -> None:
         response = client.fax.with_raw_response.retrieve_status(
@@ -65,7 +65,7 @@ class TestFax:
         fax = response.parse()
         assert_matches_type(FaxRetrieveStatusResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_status(self, client: BlueHive) -> None:
         with client.fax.with_streaming_response.retrieve_status(
@@ -79,7 +79,7 @@ class TestFax:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_retrieve_status(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -87,7 +87,7 @@ class TestFax:
                 "",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_send(self, client: BlueHive) -> None:
         fax = client.fax.send(
@@ -99,7 +99,7 @@ class TestFax:
         )
         assert_matches_type(FaxSendResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_send_with_all_params(self, client: BlueHive) -> None:
         fax = client.fax.send(
@@ -115,7 +115,7 @@ class TestFax:
         )
         assert_matches_type(FaxSendResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_send(self, client: BlueHive) -> None:
         response = client.fax.with_raw_response.send(
@@ -131,7 +131,7 @@ class TestFax:
         fax = response.parse()
         assert_matches_type(FaxSendResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_send(self, client: BlueHive) -> None:
         with client.fax.with_streaming_response.send(
@@ -155,13 +155,13 @@ class TestAsyncFax:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list_providers(self, async_client: AsyncBlueHive) -> None:
         fax = await async_client.fax.list_providers()
         assert_matches_type(FaxListProvidersResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_list_providers(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.fax.with_raw_response.list_providers()
@@ -171,7 +171,7 @@ class TestAsyncFax:
         fax = await response.parse()
         assert_matches_type(FaxListProvidersResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_list_providers(self, async_client: AsyncBlueHive) -> None:
         async with async_client.fax.with_streaming_response.list_providers() as response:
@@ -183,7 +183,7 @@ class TestAsyncFax:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_status(self, async_client: AsyncBlueHive) -> None:
         fax = await async_client.fax.retrieve_status(
@@ -191,7 +191,7 @@ class TestAsyncFax:
         )
         assert_matches_type(FaxRetrieveStatusResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_status(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.fax.with_raw_response.retrieve_status(
@@ -203,7 +203,7 @@ class TestAsyncFax:
         fax = await response.parse()
         assert_matches_type(FaxRetrieveStatusResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_status(self, async_client: AsyncBlueHive) -> None:
         async with async_client.fax.with_streaming_response.retrieve_status(
@@ -217,7 +217,7 @@ class TestAsyncFax:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_retrieve_status(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -225,7 +225,7 @@ class TestAsyncFax:
                 "",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_send(self, async_client: AsyncBlueHive) -> None:
         fax = await async_client.fax.send(
@@ -237,7 +237,7 @@ class TestAsyncFax:
         )
         assert_matches_type(FaxSendResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_send_with_all_params(self, async_client: AsyncBlueHive) -> None:
         fax = await async_client.fax.send(
@@ -253,7 +253,7 @@ class TestAsyncFax:
         )
         assert_matches_type(FaxSendResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_send(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.fax.with_raw_response.send(
@@ -269,7 +269,7 @@ class TestAsyncFax:
         fax = await response.parse()
         assert_matches_type(FaxSendResponse, fax, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_send(self, async_client: AsyncBlueHive) -> None:
         async with async_client.fax.with_streaming_response.send(

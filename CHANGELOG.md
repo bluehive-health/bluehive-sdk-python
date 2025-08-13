@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-08-13)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Chores
+
+* **internal:** codegen related update ([6f04aff](https://github.com/bluehive-health/bluehive-sdk-python/commit/6f04afff1ae3b0d1f7d984c591af132408d433b8))
+
 ## 0.1.0-alpha.7 (2025-08-09)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
