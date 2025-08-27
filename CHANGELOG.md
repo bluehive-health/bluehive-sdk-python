@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-08-27)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Bug Fixes
+
+* avoid newer type syntax ([3eb192a](https://github.com/bluehive-health/bluehive-sdk-python/commit/3eb192a9c2236839c9df644d481f16c9080bd472))
+
+
+### Chores
+
+* **internal:** change ci workflow machines ([cc6b943](https://github.com/bluehive-health/bluehive-sdk-python/commit/cc6b94314dfe2ff1709d61f1350967e08af858a6))
+* **internal:** update pyright exclude list ([ad0c5d7](https://github.com/bluehive-health/bluehive-sdk-python/commit/ad0c5d726b5e71b3def2cdde214f11cd73f84c03))
+* update github action ([9ada64d](https://github.com/bluehive-health/bluehive-sdk-python/commit/9ada64d8535118deb501a45cfbea5ea3ed9714dd))
+
 ## 0.1.0-alpha.8 (2025-08-13)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
