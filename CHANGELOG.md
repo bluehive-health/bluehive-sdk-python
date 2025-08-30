@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-08-30)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Chores
+
+* **internal:** add Sequence related utils ([8cd442c](https://github.com/bluehive-health/bluehive-sdk-python/commit/8cd442cfa017bb5b8907c9e0a1828c8162629c0f))
+
 ## 0.1.0-alpha.9 (2025-08-27)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
