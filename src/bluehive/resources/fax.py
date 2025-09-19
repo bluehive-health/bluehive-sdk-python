@@ -5,7 +5,7 @@ from __future__ import annotations
 import httpx
 
 from ..types import fax_send_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -51,7 +51,7 @@ class FaxResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> FaxListProvidersResponse:
         """Get a list of available fax providers and their configuration status."""
         return self._get(
@@ -71,7 +71,7 @@ class FaxResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> FaxRetrieveStatusResponse:
         """
         Retrieve the current status and details of a fax by its ID.
@@ -100,15 +100,15 @@ class FaxResource(SyncAPIResource):
         *,
         document: fax_send_params.Document,
         to: str,
-        from_: str | NotGiven = NOT_GIVEN,
-        provider: str | NotGiven = NOT_GIVEN,
-        subject: str | NotGiven = NOT_GIVEN,
+        from_: str | Omit = omit,
+        provider: str | Omit = omit,
+        subject: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> FaxSendResponse:
         """
         Send a fax document to a specified number using the configured fax provider.
@@ -177,7 +177,7 @@ class AsyncFaxResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> FaxListProvidersResponse:
         """Get a list of available fax providers and their configuration status."""
         return await self._get(
@@ -197,7 +197,7 @@ class AsyncFaxResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> FaxRetrieveStatusResponse:
         """
         Retrieve the current status and details of a fax by its ID.
@@ -226,15 +226,15 @@ class AsyncFaxResource(AsyncAPIResource):
         *,
         document: fax_send_params.Document,
         to: str,
-        from_: str | NotGiven = NOT_GIVEN,
-        provider: str | NotGiven = NOT_GIVEN,
-        subject: str | NotGiven = NOT_GIVEN,
+        from_: str | Omit = omit,
+        provider: str | Omit = omit,
+        subject: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> FaxSendResponse:
         """
         Send a fax document to a specified number using the configured fax provider.
