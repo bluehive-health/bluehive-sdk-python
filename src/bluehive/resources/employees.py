@@ -365,15 +365,18 @@ class EmployeesResource(SyncAPIResource):
         """
         return self._delete(
             "/v1/employees/unlink-user",
-            body=maybe_transform(
-                {
-                    "employee_id": employee_id,
-                    "user_id": user_id,
-                },
-                employee_unlink_user_params.EmployeeUnlinkUserParams,
-            ),
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform(
+                    {
+                        "employee_id": employee_id,
+                        "user_id": user_id,
+                    },
+                    employee_unlink_user_params.EmployeeUnlinkUserParams,
+                ),
             ),
             cast_to=EmployeeUnlinkUserResponse,
         )
@@ -708,15 +711,18 @@ class AsyncEmployeesResource(AsyncAPIResource):
         """
         return await self._delete(
             "/v1/employees/unlink-user",
-            body=await async_maybe_transform(
-                {
-                    "employee_id": employee_id,
-                    "user_id": user_id,
-                },
-                employee_unlink_user_params.EmployeeUnlinkUserParams,
-            ),
             options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform(
+                    {
+                        "employee_id": employee_id,
+                        "user_id": user_id,
+                    },
+                    employee_unlink_user_params.EmployeeUnlinkUserParams,
+                ),
             ),
             cast_to=EmployeeUnlinkUserResponse,
         )

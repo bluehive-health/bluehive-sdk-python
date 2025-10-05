@@ -18,47 +18,6 @@ class TestHl7:
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
-    def test_method_process(self, client: BlueHive) -> None:
-        hl7 = client.hl7.process()
-        assert_matches_type(str, hl7, path=["response"])
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    def test_method_process_with_all_params(self, client: BlueHive) -> None:
-        hl7 = client.hl7.process(
-            f="f",
-            interface="interface",
-            login_passwd="login_passwd",
-            login_user="login_user",
-            message="message",
-            message_b64="message_b64",
-        )
-        assert_matches_type(str, hl7, path=["response"])
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    def test_raw_response_process(self, client: BlueHive) -> None:
-        response = client.hl7.with_raw_response.process()
-
-        assert response.is_closed is True
-        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-        hl7 = response.parse()
-        assert_matches_type(str, hl7, path=["response"])
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    def test_streaming_response_process(self, client: BlueHive) -> None:
-        with client.hl7.with_streaming_response.process() as response:
-            assert not response.is_closed
-            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-
-            hl7 = response.parse()
-            assert_matches_type(str, hl7, path=["response"])
-
-        assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
     def test_method_send_results(self, client: BlueHive) -> None:
         hl7 = client.hl7.send_results(
             employee_id="employeeId",
@@ -111,47 +70,6 @@ class TestAsyncHl7:
     parametrize = pytest.mark.parametrize(
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    async def test_method_process(self, async_client: AsyncBlueHive) -> None:
-        hl7 = await async_client.hl7.process()
-        assert_matches_type(str, hl7, path=["response"])
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    async def test_method_process_with_all_params(self, async_client: AsyncBlueHive) -> None:
-        hl7 = await async_client.hl7.process(
-            f="f",
-            interface="interface",
-            login_passwd="login_passwd",
-            login_user="login_user",
-            message="message",
-            message_b64="message_b64",
-        )
-        assert_matches_type(str, hl7, path=["response"])
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    async def test_raw_response_process(self, async_client: AsyncBlueHive) -> None:
-        response = await async_client.hl7.with_raw_response.process()
-
-        assert response.is_closed is True
-        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-        hl7 = await response.parse()
-        assert_matches_type(str, hl7, path=["response"])
-
-    @pytest.mark.skip(reason="Prism tests are disabled")
-    @parametrize
-    async def test_streaming_response_process(self, async_client: AsyncBlueHive) -> None:
-        async with async_client.hl7.with_streaming_response.process() as response:
-            assert not response.is_closed
-            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-
-            hl7 = await response.parse()
-            assert_matches_type(str, hl7, path=["response"])
-
-        assert cast(Any, response.is_closed) is True
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
