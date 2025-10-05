@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-10-05)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* **api:** api update ([9d744ca](https://github.com/bluehive-health/bluehive-sdk-python/commit/9d744caeab82a0ecedbbc952049c66dd3d17108f))
+* improve future compat with pydantic v3 ([6bfbee9](https://github.com/bluehive-health/bluehive-sdk-python/commit/6bfbee94feae482a33366bc32249e0be8fb87a18))
+* **types:** replace List[str] with SequenceNotStr in params ([4626a19](https://github.com/bluehive-health/bluehive-sdk-python/commit/4626a19ca1b46dd544b7f404519c30d4c595cd5d))
+
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([4339c62](https://github.com/bluehive-health/bluehive-sdk-python/commit/4339c62ca013f8c1f3039011dc9433c04ee16e8b))
+* **internal:** add Sequence related utils ([8cd442c](https://github.com/bluehive-health/bluehive-sdk-python/commit/8cd442cfa017bb5b8907c9e0a1828c8162629c0f))
+* **internal:** move mypy configurations to `pyproject.toml` file ([0d4c86c](https://github.com/bluehive-health/bluehive-sdk-python/commit/0d4c86c1da12bf297fac299bbf36b7489d0e1421))
+* **internal:** update pydantic dependency ([4d7dd02](https://github.com/bluehive-health/bluehive-sdk-python/commit/4d7dd0265c301da40e4c41761287e9ead841261a))
+* **tests:** simplify `get_platform` test ([dcf2239](https://github.com/bluehive-health/bluehive-sdk-python/commit/dcf223975077ef67c796bf1c5eeb9374b8958771))
+* **types:** change optional parameter type from NotGiven to Omit ([6ae1819](https://github.com/bluehive-health/bluehive-sdk-python/commit/6ae18194926e69fc615d51add1aadf8808842267))
+
 ## 0.1.0-alpha.9 (2025-08-27)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
