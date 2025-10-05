@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import Dict, Optional
 from typing_extensions import Literal
 
 from pydantic import Field as FieldInfo
@@ -47,5 +47,5 @@ class FaxRetrieveStatusResponse(BaseModel):
     page_count: Optional[float] = FieldInfo(alias="pageCount", default=None)
     """Number of pages in the fax"""
 
-    provider_data: Optional[object] = FieldInfo(alias="providerData", default=None)
+    provider_data: Optional[Dict[str, object]] = FieldInfo(alias="providerData", default=None)
     """Provider-specific additional data"""

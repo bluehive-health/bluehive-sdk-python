@@ -21,7 +21,7 @@ from ._types import (
 )
 from ._utils import is_given, get_async_library
 from ._version import __version__
-from .resources import fax, health, version, database, providers
+from .resources import fax, hl7, health, orders, version, database, employees, providers, integrations
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import BlueHiveError, APIStatusError
 from ._base_client import (
@@ -29,6 +29,7 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
+from .resources.employers import employers
 
 __all__ = [
     "Timeout",
@@ -48,6 +49,11 @@ class BlueHive(SyncAPIClient):
     providers: providers.ProvidersResource
     database: database.DatabaseResource
     fax: fax.FaxResource
+    employers: employers.EmployersResource
+    hl7: hl7.Hl7Resource
+    orders: orders.OrdersResource
+    employees: employees.EmployeesResource
+    integrations: integrations.IntegrationsResource
     with_raw_response: BlueHiveWithRawResponse
     with_streaming_response: BlueHiveWithStreamedResponse
 
@@ -110,6 +116,11 @@ class BlueHive(SyncAPIClient):
         self.providers = providers.ProvidersResource(self)
         self.database = database.DatabaseResource(self)
         self.fax = fax.FaxResource(self)
+        self.employers = employers.EmployersResource(self)
+        self.hl7 = hl7.Hl7Resource(self)
+        self.orders = orders.OrdersResource(self)
+        self.employees = employees.EmployeesResource(self)
+        self.integrations = integrations.IntegrationsResource(self)
         self.with_raw_response = BlueHiveWithRawResponse(self)
         self.with_streaming_response = BlueHiveWithStreamedResponse(self)
 
@@ -224,6 +235,11 @@ class AsyncBlueHive(AsyncAPIClient):
     providers: providers.AsyncProvidersResource
     database: database.AsyncDatabaseResource
     fax: fax.AsyncFaxResource
+    employers: employers.AsyncEmployersResource
+    hl7: hl7.AsyncHl7Resource
+    orders: orders.AsyncOrdersResource
+    employees: employees.AsyncEmployeesResource
+    integrations: integrations.AsyncIntegrationsResource
     with_raw_response: AsyncBlueHiveWithRawResponse
     with_streaming_response: AsyncBlueHiveWithStreamedResponse
 
@@ -286,6 +302,11 @@ class AsyncBlueHive(AsyncAPIClient):
         self.providers = providers.AsyncProvidersResource(self)
         self.database = database.AsyncDatabaseResource(self)
         self.fax = fax.AsyncFaxResource(self)
+        self.employers = employers.AsyncEmployersResource(self)
+        self.hl7 = hl7.AsyncHl7Resource(self)
+        self.orders = orders.AsyncOrdersResource(self)
+        self.employees = employees.AsyncEmployeesResource(self)
+        self.integrations = integrations.AsyncIntegrationsResource(self)
         self.with_raw_response = AsyncBlueHiveWithRawResponse(self)
         self.with_streaming_response = AsyncBlueHiveWithStreamedResponse(self)
 
@@ -401,6 +422,11 @@ class BlueHiveWithRawResponse:
         self.providers = providers.ProvidersResourceWithRawResponse(client.providers)
         self.database = database.DatabaseResourceWithRawResponse(client.database)
         self.fax = fax.FaxResourceWithRawResponse(client.fax)
+        self.employers = employers.EmployersResourceWithRawResponse(client.employers)
+        self.hl7 = hl7.Hl7ResourceWithRawResponse(client.hl7)
+        self.orders = orders.OrdersResourceWithRawResponse(client.orders)
+        self.employees = employees.EmployeesResourceWithRawResponse(client.employees)
+        self.integrations = integrations.IntegrationsResourceWithRawResponse(client.integrations)
 
 
 class AsyncBlueHiveWithRawResponse:
@@ -410,6 +436,11 @@ class AsyncBlueHiveWithRawResponse:
         self.providers = providers.AsyncProvidersResourceWithRawResponse(client.providers)
         self.database = database.AsyncDatabaseResourceWithRawResponse(client.database)
         self.fax = fax.AsyncFaxResourceWithRawResponse(client.fax)
+        self.employers = employers.AsyncEmployersResourceWithRawResponse(client.employers)
+        self.hl7 = hl7.AsyncHl7ResourceWithRawResponse(client.hl7)
+        self.orders = orders.AsyncOrdersResourceWithRawResponse(client.orders)
+        self.employees = employees.AsyncEmployeesResourceWithRawResponse(client.employees)
+        self.integrations = integrations.AsyncIntegrationsResourceWithRawResponse(client.integrations)
 
 
 class BlueHiveWithStreamedResponse:
@@ -419,6 +450,11 @@ class BlueHiveWithStreamedResponse:
         self.providers = providers.ProvidersResourceWithStreamingResponse(client.providers)
         self.database = database.DatabaseResourceWithStreamingResponse(client.database)
         self.fax = fax.FaxResourceWithStreamingResponse(client.fax)
+        self.employers = employers.EmployersResourceWithStreamingResponse(client.employers)
+        self.hl7 = hl7.Hl7ResourceWithStreamingResponse(client.hl7)
+        self.orders = orders.OrdersResourceWithStreamingResponse(client.orders)
+        self.employees = employees.EmployeesResourceWithStreamingResponse(client.employees)
+        self.integrations = integrations.IntegrationsResourceWithStreamingResponse(client.integrations)
 
 
 class AsyncBlueHiveWithStreamedResponse:
@@ -428,6 +464,11 @@ class AsyncBlueHiveWithStreamedResponse:
         self.providers = providers.AsyncProvidersResourceWithStreamingResponse(client.providers)
         self.database = database.AsyncDatabaseResourceWithStreamingResponse(client.database)
         self.fax = fax.AsyncFaxResourceWithStreamingResponse(client.fax)
+        self.employers = employers.AsyncEmployersResourceWithStreamingResponse(client.employers)
+        self.hl7 = hl7.AsyncHl7ResourceWithStreamingResponse(client.hl7)
+        self.orders = orders.AsyncOrdersResourceWithStreamingResponse(client.orders)
+        self.employees = employees.AsyncEmployeesResourceWithStreamingResponse(client.employees)
+        self.integrations = integrations.AsyncIntegrationsResourceWithStreamingResponse(client.integrations)
 
 
 Client = BlueHive
