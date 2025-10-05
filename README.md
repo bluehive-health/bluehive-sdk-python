@@ -25,12 +25,9 @@ pip install --pre bluehive
 The full API of this library can be found in [api.md](api.md).
 
 ```python
-import os
 from bluehive import BlueHive
 
-client = BlueHive(
-    api_key=os.environ.get("BLUEHIVE_API_KEY"),  # This is the default and can be omitted
-)
+client = BlueHive()
 
 response = client.health.check()
 print(response.status)
@@ -46,13 +43,10 @@ so that your API Key is not stored in source control.
 Simply import `AsyncBlueHive` instead of `BlueHive` and use `await` with each API call:
 
 ```python
-import os
 import asyncio
 from bluehive import AsyncBlueHive
 
-client = AsyncBlueHive(
-    api_key=os.environ.get("BLUEHIVE_API_KEY"),  # This is the default and can be omitted
-)
+client = AsyncBlueHive()
 
 
 async def main() -> None:
@@ -86,7 +80,6 @@ from bluehive import AsyncBlueHive
 
 async def main() -> None:
     async with AsyncBlueHive(
-        api_key="My API Key",
         http_client=DefaultAioHttpClient(),
     ) as client:
         response = await client.health.check()
