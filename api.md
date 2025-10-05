@@ -100,11 +100,12 @@ Methods:
 Types:
 
 ```python
-from bluehive.types import Hl7SendResultsResponse
+from bluehive.types import Hl7ProcessResponse, Hl7SendResultsResponse
 ```
 
 Methods:
 
+- <code title="post /v1/hl7/">client.hl7.<a href="./src/bluehive/resources/hl7.py">process</a>(\*\*<a href="src/bluehive/types/hl7_process_params.py">params</a>) -> str</code>
 - <code title="post /v1/hl7/results">client.hl7.<a href="./src/bluehive/resources/hl7.py">send_results</a>(\*\*<a href="src/bluehive/types/hl7_send_results_params.py">params</a>) -> str</code>
 
 # Orders

@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from .fax_send_params import FaxSendParams as FaxSendParams
 from .fax_send_response import FaxSendResponse as FaxSendResponse
+from .hl7_process_params import Hl7ProcessParams as Hl7ProcessParams
 from .order_create_params import OrderCreateParams as OrderCreateParams
 from .order_update_params import OrderUpdateParams as OrderUpdateParams
 from .employee_list_params import EmployeeListParams as EmployeeListParams
+from .hl7_process_response import Hl7ProcessResponse as Hl7ProcessResponse
 from .health_check_response import HealthCheckResponse as HealthCheckResponse
 from .order_create_response import OrderCreateResponse as OrderCreateResponse
 from .order_update_response import OrderUpdateResponse as OrderUpdateResponse
