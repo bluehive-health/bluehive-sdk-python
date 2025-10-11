@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2025-10-11)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Chores
+
+* **internal:** detect missing future annotations with ruff ([552be23](https://github.com/bluehive-health/bluehive-sdk-python/commit/552be23072b02ca07ba39de2bcc01b9214eb635c))
+
 ## 0.1.0-alpha.13 (2025-10-05)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
