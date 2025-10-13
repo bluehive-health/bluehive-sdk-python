@@ -22,7 +22,15 @@ class ServiceBundleRetrieveResponse(BaseModel):
 
     created_by: Optional[str] = FieldInfo(alias="createdBy", default=None)
 
+    limit: Optional[float] = None
+
+    occurrence: Optional[str] = None
+
+    recurring: Optional[bool] = None
+
     roles: Optional[List[str]] = None
+
+    start_date: Optional[str] = FieldInfo(alias="startDate", default=None)
 
     updated_at: Optional[str] = FieldInfo(alias="updatedAt", default=None)
 
