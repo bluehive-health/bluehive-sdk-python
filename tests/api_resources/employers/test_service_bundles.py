@@ -40,7 +40,11 @@ class TestServiceBundles:
             bundle_name="x",
             service_ids=["string"],
             _id="_id",
+            limit=0,
+            occurrence="occurrence",
+            recurring=True,
             roles=["string"],
+            start_date="startDate",
         )
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
@@ -156,7 +160,11 @@ class TestServiceBundles:
             bundle_name="x",
             service_ids=["string"],
             _id="_id",
+            limit=0,
+            occurrence="occurrence",
+            recurring=True,
             roles=["string"],
+            start_date="startDate",
         )
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
@@ -329,7 +337,11 @@ class TestAsyncServiceBundles:
             bundle_name="x",
             service_ids=["string"],
             _id="_id",
+            limit=0,
+            occurrence="occurrence",
+            recurring=True,
             roles=["string"],
+            start_date="startDate",
         )
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
@@ -445,7 +457,11 @@ class TestAsyncServiceBundles:
             bundle_name="x",
             service_ids=["string"],
             _id="_id",
+            limit=0,
+            occurrence="occurrence",
+            recurring=True,
             roles=["string"],
+            start_date="startDate",
         )
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 

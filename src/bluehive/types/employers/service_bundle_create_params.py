@@ -18,4 +18,12 @@ class ServiceBundleCreateParams(TypedDict, total=False):
 
     _id: str
 
+    limit: float
+
+    occurrence: str
+
+    recurring: bool
+
     roles: Optional[SequenceNotStr[str]]
+
+    start_date: Annotated[str, PropertyInfo(alias="startDate")]
