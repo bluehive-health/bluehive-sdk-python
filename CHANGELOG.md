@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2025-10-30)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([25e1e7c](https://github.com/bluehive-health/bluehive-sdk-python/commit/25e1e7ca071fda5025c0999704e48963d08eea1c))
+
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([6cf61e6](https://github.com/bluehive-health/bluehive-sdk-python/commit/6cf61e624fdafed663c932e964287c94b870659e))
+
 ## 0.1.0-alpha.14 (2025-10-13)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
