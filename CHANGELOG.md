@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2025-11-11)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Bug Fixes
+
+* compat with Python 3.14 ([c705861](https://github.com/bluehive-health/bluehive-sdk-python/commit/c7058616c0a1a3a1c57acc60afeec14f0ee0c731))
+
+
+### Chores
+
+* **internal/tests:** avoid race condition with implicit client cleanup ([a192964](https://github.com/bluehive-health/bluehive-sdk-python/commit/a19296467f6b7ccee2eefd1a15982e2360a969c7))
+* **internal:** grammar fix (it's -&gt; its) ([1f55feb](https://github.com/bluehive-health/bluehive-sdk-python/commit/1f55feb4f4e96ff030a18511fe1429c3f35272d0))
+* **package:** drop Python 3.8 support ([51484a6](https://github.com/bluehive-health/bluehive-sdk-python/commit/51484a6fbc684a6629be881b461e943b6ffd83f1))
+
 ## 0.1.0-alpha.15 (2025-10-30)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
