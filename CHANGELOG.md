@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-11-12)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Bug Fixes
+
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([e92a55a](https://github.com/bluehive-health/bluehive-sdk-python/commit/e92a55a2f719883ff9ea7f639b4740c5b824e83d))
+
 ## 0.1.0-alpha.16 (2025-11-11)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
