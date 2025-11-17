@@ -7,7 +7,22 @@ from pydantic import Field as FieldInfo
 
 from .._models import BaseModel
 
-__all__ = ["OrderCreateResponse", "UnionMember0", "UnionMember1", "UnionMember1OrderResult"]
+__all__ = [
+    "OrderCreateResponse",
+    "UnionMember0",
+    "UnionMember0UnavailableService",
+    "UnionMember1",
+    "UnionMember1OrderResult",
+    "UnionMember1UnavailableService",
+]
+
+
+class UnionMember0UnavailableService(BaseModel):
+    reason: str
+
+    service_id: str = FieldInfo(alias="serviceId")
+
+    service_name: Optional[str] = FieldInfo(alias="serviceName", default=None)
 
 
 class UnionMember0(BaseModel):
@@ -21,7 +36,13 @@ class UnionMember0(BaseModel):
 
     message: Optional[str] = None
 
+    partial_success: Optional[bool] = FieldInfo(alias="partialSuccess", default=None)
+
     self_pay: Optional[bool] = FieldInfo(alias="selfPay", default=None)
+
+    unavailable_services: Optional[List[UnionMember0UnavailableService]] = FieldInfo(
+        alias="unavailableServices", default=None
+    )
 
 
 class UnionMember1OrderResult(BaseModel):
@@ -32,6 +53,14 @@ class UnionMember1OrderResult(BaseModel):
     provider_id: str = FieldInfo(alias="providerId")
 
 
+class UnionMember1UnavailableService(BaseModel):
+    reason: str
+
+    service_id: str = FieldInfo(alias="serviceId")
+
+    service_name: Optional[str] = FieldInfo(alias="serviceName", default=None)
+
+
 class UnionMember1(BaseModel):
     order_results: List[UnionMember1OrderResult] = FieldInfo(alias="orderResults")
 
@@ -40,6 +69,12 @@ class UnionMember1(BaseModel):
     success: Literal[True]
 
     message: Optional[str] = None
+
+    partial_success: Optional[bool] = FieldInfo(alias="partialSuccess", default=None)
+
+    unavailable_services: Optional[List[UnionMember1UnavailableService]] = FieldInfo(
+        alias="unavailableServices", default=None
+    )
 
 
 OrderCreateResponse: TypeAlias = Union[UnionMember0, UnionMember1]
