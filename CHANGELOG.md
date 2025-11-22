@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-11-22)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Chores
+
+* add Python 3.14 classifier and testing ([cf2cf5e](https://github.com/bluehive-health/bluehive-sdk-python/commit/cf2cf5eb4f9bf42a039e6d496ec7964b3afca0d1))
+
 ## 0.1.0-alpha.18 (2025-11-17)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
