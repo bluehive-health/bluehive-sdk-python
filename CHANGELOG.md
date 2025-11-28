@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-11-28)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Bug Fixes
+
+* ensure streams are always closed ([199cb37](https://github.com/bluehive-health/bluehive-sdk-python/commit/199cb37d2f1452bac63db30f1a958c8f8810873f))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([cf2cf5e](https://github.com/bluehive-health/bluehive-sdk-python/commit/cf2cf5eb4f9bf42a039e6d496ec7964b3afca0d1))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([67ddc37](https://github.com/bluehive-health/bluehive-sdk-python/commit/67ddc37871be48e2ca0b59486d3bab5b6786e93b))
+
 ## 0.1.0-alpha.18 (2025-11-17)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
