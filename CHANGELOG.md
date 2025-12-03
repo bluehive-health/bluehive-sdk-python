@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-12-03)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Chores
+
+* update lockfile ([978ce50](https://github.com/bluehive-health/bluehive-sdk-python/commit/978ce50efcbed885fc4e51f84e99e5bdf4b7122d))
+
 ## 0.1.0-alpha.19 (2025-11-28)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
