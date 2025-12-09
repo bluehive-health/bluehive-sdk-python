@@ -8,6 +8,8 @@ __all__ = ["EmployeeCreateResponse"]
 
 
 class EmployeeCreateResponse(BaseModel):
+    """Employee created successfully"""
+
     employee_id: str = FieldInfo(alias="employeeId")
     """ID of the created employee"""
 

@@ -6,6 +6,8 @@ __all__ = ["EmployeeUnlinkUserResponse"]
 
 
 class EmployeeUnlinkUserResponse(BaseModel):
+    """Employee unlinked successfully"""
+
     message: str
 
     success: bool
