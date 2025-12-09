@@ -12,6 +12,8 @@ __all__ = ["EmployeeRetrieveResponse", "Employee", "EmployeeAddress", "EmployeeE
 
 
 class EmployeeAddress(BaseModel):
+    """Employee address"""
+
     city: str
     """City"""
 
@@ -51,6 +53,8 @@ class EmployeePhone(BaseModel):
 
 
 class Employee(BaseModel):
+    """Employee details"""
+
     api_id: str = FieldInfo(alias="_id")
     """Unique identifier"""
 
@@ -104,6 +108,8 @@ class Employee(BaseModel):
 
 
 class EmployeeRetrieveResponse(BaseModel):
+    """Employee found successfully"""
+
     employee: Employee
     """Employee details"""
 

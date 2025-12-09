@@ -6,6 +6,8 @@ __all__ = ["EmployeeUpdateResponse"]
 
 
 class EmployeeUpdateResponse(BaseModel):
+    """Employee updated successfully"""
+
     message: str
 
     success: bool

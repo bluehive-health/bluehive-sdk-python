@@ -18,6 +18,8 @@ class Hl7SendResultsParams(TypedDict, total=False):
 
 
 class File(TypedDict, total=False):
+    """File containing the results"""
+
     base64: Required[str]
     """Base64 encoded file content"""
 

@@ -8,6 +8,8 @@ __all__ = ["EmployeeLinkUserResponse"]
 
 
 class EmployeeLinkUserResponse(BaseModel):
+    """Employee linked successfully"""
+
     link_id: str = FieldInfo(alias="linkId")
     """ID of the created link"""
 

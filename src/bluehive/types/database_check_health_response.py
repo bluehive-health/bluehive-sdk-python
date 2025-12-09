@@ -11,6 +11,8 @@ __all__ = ["DatabaseCheckHealthResponse", "Stats"]
 
 
 class Stats(BaseModel):
+    """Database statistics (not available in production)"""
+
     collections: Optional[float] = None
     """Number of collections"""
 
