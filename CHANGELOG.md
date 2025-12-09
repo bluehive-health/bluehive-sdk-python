@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-12-09)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Chores
+
+* add missing docstrings ([cbf9d6f](https://github.com/bluehive-health/bluehive-sdk-python/commit/cbf9d6f0311683846712898bdbe50b648f01cc94))
+
 ## 0.1.0-alpha.20 (2025-12-09)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
