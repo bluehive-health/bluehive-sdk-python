@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-12-09)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Bug Fixes
+
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([6751a7b](https://github.com/bluehive-health/bluehive-sdk-python/commit/6751a7bedafce25c6c29de3a266baf78ee70da28))
+
+
+### Chores
+
+* update lockfile ([978ce50](https://github.com/bluehive-health/bluehive-sdk-python/commit/978ce50efcbed885fc4e51f84e99e5bdf4b7122d))
+
 ## 0.1.0-alpha.19 (2025-11-28)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
