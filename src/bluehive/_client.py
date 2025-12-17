@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Mapping
+from typing import TYPE_CHECKING, Any, Mapping
 from typing_extensions import Self, override
 
 import httpx
@@ -20,8 +20,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import fax, hl7, health, orders, version, database, employees, providers, integrations
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import BlueHiveError, APIStatusError
 from ._base_client import (
@@ -29,7 +29,19 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
-from .resources.employers import employers
+
+if TYPE_CHECKING:
+    from .resources import fax, hl7, health, orders, version, database, employees, employers, providers, integrations
+    from .resources.fax import FaxResource, AsyncFaxResource
+    from .resources.hl7 import Hl7Resource, AsyncHl7Resource
+    from .resources.health import HealthResource, AsyncHealthResource
+    from .resources.orders import OrdersResource, AsyncOrdersResource
+    from .resources.version import VersionResource, AsyncVersionResource
+    from .resources.database import DatabaseResource, AsyncDatabaseResource
+    from .resources.employees import EmployeesResource, AsyncEmployeesResource
+    from .resources.providers import ProvidersResource, AsyncProvidersResource
+    from .resources.integrations import IntegrationsResource, AsyncIntegrationsResource
+    from .resources.employers.employers import EmployersResource, AsyncEmployersResource
 
 __all__ = [
     "Timeout",
@@ -44,19 +56,6 @@ __all__ = [
 
 
 class BlueHive(SyncAPIClient):
-    health: health.HealthResource
-    version: version.VersionResource
-    providers: providers.ProvidersResource
-    database: database.DatabaseResource
-    fax: fax.FaxResource
-    employers: employers.EmployersResource
-    hl7: hl7.Hl7Resource
-    orders: orders.OrdersResource
-    employees: employees.EmployeesResource
-    integrations: integrations.IntegrationsResource
-    with_raw_response: BlueHiveWithRawResponse
-    with_streaming_response: BlueHiveWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -111,18 +110,73 @@ class BlueHive(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.health = health.HealthResource(self)
-        self.version = version.VersionResource(self)
-        self.providers = providers.ProvidersResource(self)
-        self.database = database.DatabaseResource(self)
-        self.fax = fax.FaxResource(self)
-        self.employers = employers.EmployersResource(self)
-        self.hl7 = hl7.Hl7Resource(self)
-        self.orders = orders.OrdersResource(self)
-        self.employees = employees.EmployeesResource(self)
-        self.integrations = integrations.IntegrationsResource(self)
-        self.with_raw_response = BlueHiveWithRawResponse(self)
-        self.with_streaming_response = BlueHiveWithStreamedResponse(self)
+    @cached_property
+    def health(self) -> HealthResource:
+        from .resources.health import HealthResource
+
+        return HealthResource(self)
+
+    @cached_property
+    def version(self) -> VersionResource:
+        from .resources.version import VersionResource
+
+        return VersionResource(self)
+
+    @cached_property
+    def providers(self) -> ProvidersResource:
+        from .resources.providers import ProvidersResource
+
+        return ProvidersResource(self)
+
+    @cached_property
+    def database(self) -> DatabaseResource:
+        from .resources.database import DatabaseResource
+
+        return DatabaseResource(self)
+
+    @cached_property
+    def fax(self) -> FaxResource:
+        from .resources.fax import FaxResource
+
+        return FaxResource(self)
+
+    @cached_property
+    def employers(self) -> EmployersResource:
+        from .resources.employers import EmployersResource
+
+        return EmployersResource(self)
+
+    @cached_property
+    def hl7(self) -> Hl7Resource:
+        from .resources.hl7 import Hl7Resource
+
+        return Hl7Resource(self)
+
+    @cached_property
+    def orders(self) -> OrdersResource:
+        from .resources.orders import OrdersResource
+
+        return OrdersResource(self)
+
+    @cached_property
+    def employees(self) -> EmployeesResource:
+        from .resources.employees import EmployeesResource
+
+        return EmployeesResource(self)
+
+    @cached_property
+    def integrations(self) -> IntegrationsResource:
+        from .resources.integrations import IntegrationsResource
+
+        return IntegrationsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> BlueHiveWithRawResponse:
+        return BlueHiveWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> BlueHiveWithStreamedResponse:
+        return BlueHiveWithStreamedResponse(self)
 
     @property
     @override
@@ -230,19 +284,6 @@ class BlueHive(SyncAPIClient):
 
 
 class AsyncBlueHive(AsyncAPIClient):
-    health: health.AsyncHealthResource
-    version: version.AsyncVersionResource
-    providers: providers.AsyncProvidersResource
-    database: database.AsyncDatabaseResource
-    fax: fax.AsyncFaxResource
-    employers: employers.AsyncEmployersResource
-    hl7: hl7.AsyncHl7Resource
-    orders: orders.AsyncOrdersResource
-    employees: employees.AsyncEmployeesResource
-    integrations: integrations.AsyncIntegrationsResource
-    with_raw_response: AsyncBlueHiveWithRawResponse
-    with_streaming_response: AsyncBlueHiveWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -297,18 +338,73 @@ class AsyncBlueHive(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.health = health.AsyncHealthResource(self)
-        self.version = version.AsyncVersionResource(self)
-        self.providers = providers.AsyncProvidersResource(self)
-        self.database = database.AsyncDatabaseResource(self)
-        self.fax = fax.AsyncFaxResource(self)
-        self.employers = employers.AsyncEmployersResource(self)
-        self.hl7 = hl7.AsyncHl7Resource(self)
-        self.orders = orders.AsyncOrdersResource(self)
-        self.employees = employees.AsyncEmployeesResource(self)
-        self.integrations = integrations.AsyncIntegrationsResource(self)
-        self.with_raw_response = AsyncBlueHiveWithRawResponse(self)
-        self.with_streaming_response = AsyncBlueHiveWithStreamedResponse(self)
+    @cached_property
+    def health(self) -> AsyncHealthResource:
+        from .resources.health import AsyncHealthResource
+
+        return AsyncHealthResource(self)
+
+    @cached_property
+    def version(self) -> AsyncVersionResource:
+        from .resources.version import AsyncVersionResource
+
+        return AsyncVersionResource(self)
+
+    @cached_property
+    def providers(self) -> AsyncProvidersResource:
+        from .resources.providers import AsyncProvidersResource
+
+        return AsyncProvidersResource(self)
+
+    @cached_property
+    def database(self) -> AsyncDatabaseResource:
+        from .resources.database import AsyncDatabaseResource
+
+        return AsyncDatabaseResource(self)
+
+    @cached_property
+    def fax(self) -> AsyncFaxResource:
+        from .resources.fax import AsyncFaxResource
+
+        return AsyncFaxResource(self)
+
+    @cached_property
+    def employers(self) -> AsyncEmployersResource:
+        from .resources.employers import AsyncEmployersResource
+
+        return AsyncEmployersResource(self)
+
+    @cached_property
+    def hl7(self) -> AsyncHl7Resource:
+        from .resources.hl7 import AsyncHl7Resource
+
+        return AsyncHl7Resource(self)
+
+    @cached_property
+    def orders(self) -> AsyncOrdersResource:
+        from .resources.orders import AsyncOrdersResource
+
+        return AsyncOrdersResource(self)
+
+    @cached_property
+    def employees(self) -> AsyncEmployeesResource:
+        from .resources.employees import AsyncEmployeesResource
+
+        return AsyncEmployeesResource(self)
+
+    @cached_property
+    def integrations(self) -> AsyncIntegrationsResource:
+        from .resources.integrations import AsyncIntegrationsResource
+
+        return AsyncIntegrationsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncBlueHiveWithRawResponse:
+        return AsyncBlueHiveWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncBlueHiveWithStreamedResponse:
+        return AsyncBlueHiveWithStreamedResponse(self)
 
     @property
     @override
@@ -416,59 +512,271 @@ class AsyncBlueHive(AsyncAPIClient):
 
 
 class BlueHiveWithRawResponse:
+    _client: BlueHive
+
     def __init__(self, client: BlueHive) -> None:
-        self.health = health.HealthResourceWithRawResponse(client.health)
-        self.version = version.VersionResourceWithRawResponse(client.version)
-        self.providers = providers.ProvidersResourceWithRawResponse(client.providers)
-        self.database = database.DatabaseResourceWithRawResponse(client.database)
-        self.fax = fax.FaxResourceWithRawResponse(client.fax)
-        self.employers = employers.EmployersResourceWithRawResponse(client.employers)
-        self.hl7 = hl7.Hl7ResourceWithRawResponse(client.hl7)
-        self.orders = orders.OrdersResourceWithRawResponse(client.orders)
-        self.employees = employees.EmployeesResourceWithRawResponse(client.employees)
-        self.integrations = integrations.IntegrationsResourceWithRawResponse(client.integrations)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.HealthResourceWithRawResponse:
+        from .resources.health import HealthResourceWithRawResponse
+
+        return HealthResourceWithRawResponse(self._client.health)
+
+    @cached_property
+    def version(self) -> version.VersionResourceWithRawResponse:
+        from .resources.version import VersionResourceWithRawResponse
+
+        return VersionResourceWithRawResponse(self._client.version)
+
+    @cached_property
+    def providers(self) -> providers.ProvidersResourceWithRawResponse:
+        from .resources.providers import ProvidersResourceWithRawResponse
+
+        return ProvidersResourceWithRawResponse(self._client.providers)
+
+    @cached_property
+    def database(self) -> database.DatabaseResourceWithRawResponse:
+        from .resources.database import DatabaseResourceWithRawResponse
+
+        return DatabaseResourceWithRawResponse(self._client.database)
+
+    @cached_property
+    def fax(self) -> fax.FaxResourceWithRawResponse:
+        from .resources.fax import FaxResourceWithRawResponse
+
+        return FaxResourceWithRawResponse(self._client.fax)
+
+    @cached_property
+    def employers(self) -> employers.EmployersResourceWithRawResponse:
+        from .resources.employers import EmployersResourceWithRawResponse
+
+        return EmployersResourceWithRawResponse(self._client.employers)
+
+    @cached_property
+    def hl7(self) -> hl7.Hl7ResourceWithRawResponse:
+        from .resources.hl7 import Hl7ResourceWithRawResponse
+
+        return Hl7ResourceWithRawResponse(self._client.hl7)
+
+    @cached_property
+    def orders(self) -> orders.OrdersResourceWithRawResponse:
+        from .resources.orders import OrdersResourceWithRawResponse
+
+        return OrdersResourceWithRawResponse(self._client.orders)
+
+    @cached_property
+    def employees(self) -> employees.EmployeesResourceWithRawResponse:
+        from .resources.employees import EmployeesResourceWithRawResponse
+
+        return EmployeesResourceWithRawResponse(self._client.employees)
+
+    @cached_property
+    def integrations(self) -> integrations.IntegrationsResourceWithRawResponse:
+        from .resources.integrations import IntegrationsResourceWithRawResponse
+
+        return IntegrationsResourceWithRawResponse(self._client.integrations)
 
 
 class AsyncBlueHiveWithRawResponse:
+    _client: AsyncBlueHive
+
     def __init__(self, client: AsyncBlueHive) -> None:
-        self.health = health.AsyncHealthResourceWithRawResponse(client.health)
-        self.version = version.AsyncVersionResourceWithRawResponse(client.version)
-        self.providers = providers.AsyncProvidersResourceWithRawResponse(client.providers)
-        self.database = database.AsyncDatabaseResourceWithRawResponse(client.database)
-        self.fax = fax.AsyncFaxResourceWithRawResponse(client.fax)
-        self.employers = employers.AsyncEmployersResourceWithRawResponse(client.employers)
-        self.hl7 = hl7.AsyncHl7ResourceWithRawResponse(client.hl7)
-        self.orders = orders.AsyncOrdersResourceWithRawResponse(client.orders)
-        self.employees = employees.AsyncEmployeesResourceWithRawResponse(client.employees)
-        self.integrations = integrations.AsyncIntegrationsResourceWithRawResponse(client.integrations)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.AsyncHealthResourceWithRawResponse:
+        from .resources.health import AsyncHealthResourceWithRawResponse
+
+        return AsyncHealthResourceWithRawResponse(self._client.health)
+
+    @cached_property
+    def version(self) -> version.AsyncVersionResourceWithRawResponse:
+        from .resources.version import AsyncVersionResourceWithRawResponse
+
+        return AsyncVersionResourceWithRawResponse(self._client.version)
+
+    @cached_property
+    def providers(self) -> providers.AsyncProvidersResourceWithRawResponse:
+        from .resources.providers import AsyncProvidersResourceWithRawResponse
+
+        return AsyncProvidersResourceWithRawResponse(self._client.providers)
+
+    @cached_property
+    def database(self) -> database.AsyncDatabaseResourceWithRawResponse:
+        from .resources.database import AsyncDatabaseResourceWithRawResponse
+
+        return AsyncDatabaseResourceWithRawResponse(self._client.database)
+
+    @cached_property
+    def fax(self) -> fax.AsyncFaxResourceWithRawResponse:
+        from .resources.fax import AsyncFaxResourceWithRawResponse
+
+        return AsyncFaxResourceWithRawResponse(self._client.fax)
+
+    @cached_property
+    def employers(self) -> employers.AsyncEmployersResourceWithRawResponse:
+        from .resources.employers import AsyncEmployersResourceWithRawResponse
+
+        return AsyncEmployersResourceWithRawResponse(self._client.employers)
+
+    @cached_property
+    def hl7(self) -> hl7.AsyncHl7ResourceWithRawResponse:
+        from .resources.hl7 import AsyncHl7ResourceWithRawResponse
+
+        return AsyncHl7ResourceWithRawResponse(self._client.hl7)
+
+    @cached_property
+    def orders(self) -> orders.AsyncOrdersResourceWithRawResponse:
+        from .resources.orders import AsyncOrdersResourceWithRawResponse
+
+        return AsyncOrdersResourceWithRawResponse(self._client.orders)
+
+    @cached_property
+    def employees(self) -> employees.AsyncEmployeesResourceWithRawResponse:
+        from .resources.employees import AsyncEmployeesResourceWithRawResponse
+
+        return AsyncEmployeesResourceWithRawResponse(self._client.employees)
+
+    @cached_property
+    def integrations(self) -> integrations.AsyncIntegrationsResourceWithRawResponse:
+        from .resources.integrations import AsyncIntegrationsResourceWithRawResponse
+
+        return AsyncIntegrationsResourceWithRawResponse(self._client.integrations)
 
 
 class BlueHiveWithStreamedResponse:
+    _client: BlueHive
+
     def __init__(self, client: BlueHive) -> None:
-        self.health = health.HealthResourceWithStreamingResponse(client.health)
-        self.version = version.VersionResourceWithStreamingResponse(client.version)
-        self.providers = providers.ProvidersResourceWithStreamingResponse(client.providers)
-        self.database = database.DatabaseResourceWithStreamingResponse(client.database)
-        self.fax = fax.FaxResourceWithStreamingResponse(client.fax)
-        self.employers = employers.EmployersResourceWithStreamingResponse(client.employers)
-        self.hl7 = hl7.Hl7ResourceWithStreamingResponse(client.hl7)
-        self.orders = orders.OrdersResourceWithStreamingResponse(client.orders)
-        self.employees = employees.EmployeesResourceWithStreamingResponse(client.employees)
-        self.integrations = integrations.IntegrationsResourceWithStreamingResponse(client.integrations)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.HealthResourceWithStreamingResponse:
+        from .resources.health import HealthResourceWithStreamingResponse
+
+        return HealthResourceWithStreamingResponse(self._client.health)
+
+    @cached_property
+    def version(self) -> version.VersionResourceWithStreamingResponse:
+        from .resources.version import VersionResourceWithStreamingResponse
+
+        return VersionResourceWithStreamingResponse(self._client.version)
+
+    @cached_property
+    def providers(self) -> providers.ProvidersResourceWithStreamingResponse:
+        from .resources.providers import ProvidersResourceWithStreamingResponse
+
+        return ProvidersResourceWithStreamingResponse(self._client.providers)
+
+    @cached_property
+    def database(self) -> database.DatabaseResourceWithStreamingResponse:
+        from .resources.database import DatabaseResourceWithStreamingResponse
+
+        return DatabaseResourceWithStreamingResponse(self._client.database)
+
+    @cached_property
+    def fax(self) -> fax.FaxResourceWithStreamingResponse:
+        from .resources.fax import FaxResourceWithStreamingResponse
+
+        return FaxResourceWithStreamingResponse(self._client.fax)
+
+    @cached_property
+    def employers(self) -> employers.EmployersResourceWithStreamingResponse:
+        from .resources.employers import EmployersResourceWithStreamingResponse
+
+        return EmployersResourceWithStreamingResponse(self._client.employers)
+
+    @cached_property
+    def hl7(self) -> hl7.Hl7ResourceWithStreamingResponse:
+        from .resources.hl7 import Hl7ResourceWithStreamingResponse
+
+        return Hl7ResourceWithStreamingResponse(self._client.hl7)
+
+    @cached_property
+    def orders(self) -> orders.OrdersResourceWithStreamingResponse:
+        from .resources.orders import OrdersResourceWithStreamingResponse
+
+        return OrdersResourceWithStreamingResponse(self._client.orders)
+
+    @cached_property
+    def employees(self) -> employees.EmployeesResourceWithStreamingResponse:
+        from .resources.employees import EmployeesResourceWithStreamingResponse
+
+        return EmployeesResourceWithStreamingResponse(self._client.employees)
+
+    @cached_property
+    def integrations(self) -> integrations.IntegrationsResourceWithStreamingResponse:
+        from .resources.integrations import IntegrationsResourceWithStreamingResponse
+
+        return IntegrationsResourceWithStreamingResponse(self._client.integrations)
 
 
 class AsyncBlueHiveWithStreamedResponse:
+    _client: AsyncBlueHive
+
     def __init__(self, client: AsyncBlueHive) -> None:
-        self.health = health.AsyncHealthResourceWithStreamingResponse(client.health)
-        self.version = version.AsyncVersionResourceWithStreamingResponse(client.version)
-        self.providers = providers.AsyncProvidersResourceWithStreamingResponse(client.providers)
-        self.database = database.AsyncDatabaseResourceWithStreamingResponse(client.database)
-        self.fax = fax.AsyncFaxResourceWithStreamingResponse(client.fax)
-        self.employers = employers.AsyncEmployersResourceWithStreamingResponse(client.employers)
-        self.hl7 = hl7.AsyncHl7ResourceWithStreamingResponse(client.hl7)
-        self.orders = orders.AsyncOrdersResourceWithStreamingResponse(client.orders)
-        self.employees = employees.AsyncEmployeesResourceWithStreamingResponse(client.employees)
-        self.integrations = integrations.AsyncIntegrationsResourceWithStreamingResponse(client.integrations)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.AsyncHealthResourceWithStreamingResponse:
+        from .resources.health import AsyncHealthResourceWithStreamingResponse
+
+        return AsyncHealthResourceWithStreamingResponse(self._client.health)
+
+    @cached_property
+    def version(self) -> version.AsyncVersionResourceWithStreamingResponse:
+        from .resources.version import AsyncVersionResourceWithStreamingResponse
+
+        return AsyncVersionResourceWithStreamingResponse(self._client.version)
+
+    @cached_property
+    def providers(self) -> providers.AsyncProvidersResourceWithStreamingResponse:
+        from .resources.providers import AsyncProvidersResourceWithStreamingResponse
+
+        return AsyncProvidersResourceWithStreamingResponse(self._client.providers)
+
+    @cached_property
+    def database(self) -> database.AsyncDatabaseResourceWithStreamingResponse:
+        from .resources.database import AsyncDatabaseResourceWithStreamingResponse
+
+        return AsyncDatabaseResourceWithStreamingResponse(self._client.database)
+
+    @cached_property
+    def fax(self) -> fax.AsyncFaxResourceWithStreamingResponse:
+        from .resources.fax import AsyncFaxResourceWithStreamingResponse
+
+        return AsyncFaxResourceWithStreamingResponse(self._client.fax)
+
+    @cached_property
+    def employers(self) -> employers.AsyncEmployersResourceWithStreamingResponse:
+        from .resources.employers import AsyncEmployersResourceWithStreamingResponse
+
+        return AsyncEmployersResourceWithStreamingResponse(self._client.employers)
+
+    @cached_property
+    def hl7(self) -> hl7.AsyncHl7ResourceWithStreamingResponse:
+        from .resources.hl7 import AsyncHl7ResourceWithStreamingResponse
+
+        return AsyncHl7ResourceWithStreamingResponse(self._client.hl7)
+
+    @cached_property
+    def orders(self) -> orders.AsyncOrdersResourceWithStreamingResponse:
+        from .resources.orders import AsyncOrdersResourceWithStreamingResponse
+
+        return AsyncOrdersResourceWithStreamingResponse(self._client.orders)
+
+    @cached_property
+    def employees(self) -> employees.AsyncEmployeesResourceWithStreamingResponse:
+        from .resources.employees import AsyncEmployeesResourceWithStreamingResponse
+
+        return AsyncEmployeesResourceWithStreamingResponse(self._client.employees)
+
+    @cached_property
+    def integrations(self) -> integrations.AsyncIntegrationsResourceWithStreamingResponse:
+        from .resources.integrations import AsyncIntegrationsResourceWithStreamingResponse
+
+        return AsyncIntegrationsResourceWithStreamingResponse(self._client.integrations)
 
 
 Client = BlueHive
