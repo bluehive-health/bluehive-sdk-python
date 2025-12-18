@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-12-18)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Bug Fixes
+
+* use async_to_httpx_files in patch method ([14c87ff](https://github.com/bluehive-health/bluehive-sdk-python/commit/14c87ff4348ff9f90a713febca9066b7767881aa))
+
+
+### Chores
+
+* add missing docstrings ([cbf9d6f](https://github.com/bluehive-health/bluehive-sdk-python/commit/cbf9d6f0311683846712898bdbe50b648f01cc94))
+* **internal:** add missing files argument to base client ([26d47db](https://github.com/bluehive-health/bluehive-sdk-python/commit/26d47db6f1a45c7dd924ad138ad206283a7cf5f4))
+* speedup initial import ([c84ca97](https://github.com/bluehive-health/bluehive-sdk-python/commit/c84ca97cd139339f5e3b0448839f1a8f48596337))
+
 ## 0.1.0-alpha.20 (2025-12-09)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
