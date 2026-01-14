@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2026-01-14)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* **client:** add support for binary request streaming ([d231657](https://github.com/bluehive-health/bluehive-sdk-python/commit/d231657de4fc14d7c5f3e4e1eaea7e1ad602f41d))
+
+
+### Chores
+
+* **internal:** add `--fix` argument to lint script ([6d278ea](https://github.com/bluehive-health/bluehive-sdk-python/commit/6d278eac7ba931d5856666f7fe76cd196992e3a3))
+* **internal:** codegen related update ([9a652d0](https://github.com/bluehive-health/bluehive-sdk-python/commit/9a652d0e447056c1cb18bbd9669abc66a57c16c1))
+* **internal:** codegen related update ([64caad6](https://github.com/bluehive-health/bluehive-sdk-python/commit/64caad6f0f83225a84863fba68d23e97c94bda57))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([8050708](https://github.com/bluehive-health/bluehive-sdk-python/commit/8050708c905d27933ecabb85cb46015cfb346f53))
+
 ## 0.1.0-alpha.21 (2025-12-18)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
