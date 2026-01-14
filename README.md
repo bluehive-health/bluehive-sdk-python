@@ -26,7 +26,7 @@ The REST API documentation can be found on [docs.bluehive.com](https://docs.blue
 
 ```sh
 # install from PyPI
-pip install --pre bluehive
+pip install '--pre bluehive'
 ```
 
 ## Usage
@@ -76,7 +76,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install --pre bluehive[aiohttp]
+pip install '--pre bluehive[aiohttp]'
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
