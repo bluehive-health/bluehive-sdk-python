@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.23 (2026-01-29)
+
+Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
+
+### Bug Fixes
+
+* **docs:** fix mcp installation instructions for remote servers ([1d04eb9](https://github.com/bluehive-health/bluehive-sdk-python/commit/1d04eb9f9596f74d673b86603792cd4f39fa6bf1))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([f54642b](https://github.com/bluehive-health/bluehive-sdk-python/commit/f54642b8daf7c57415f8308a9020dfe81a407439))
+* **internal:** update `actions/checkout` version ([151b953](https://github.com/bluehive-health/bluehive-sdk-python/commit/151b95340ebfee5fe9d42dbbb9db41f3923cb33a))
+
 ## 0.1.0-alpha.22 (2026-01-14)
 
 Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
