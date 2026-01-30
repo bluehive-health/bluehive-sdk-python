@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.24 (2026-01-30)
+
+Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
+
+### Features
+
+* **client:** add custom JSON encoder for extended type support ([0a0efd2](https://github.com/bluehive-health/bluehive-sdk-python/commit/0a0efd203839e8f7547da5576d89edea65d758ac))
+
 ## 0.1.0-alpha.23 (2026-01-29)
 
 Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
