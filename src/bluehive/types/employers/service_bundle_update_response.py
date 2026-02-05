@@ -22,6 +22,18 @@ class ServiceBundleUpdateResponse(BaseModel):
 
     created_by: Optional[str] = FieldInfo(alias="createdBy", default=None)
 
+    externally_managed: Optional[bool] = FieldInfo(alias="externallyManaged", default=None)
+    """Indicates if this bundle originated from a third-party integration.
+
+    Externally managed bundles cannot be edited or deleted in BlueHive.
+    """
+
+    integration: Optional[str] = None
+    """
+    Name of the third-party integration that manages this bundle (e.g., "Enterprise
+    Health"). Null if bundle was created in BlueHive.
+    """
+
     limit: Optional[float] = None
 
     occurrence: Optional[str] = None
