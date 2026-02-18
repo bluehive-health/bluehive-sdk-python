@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from typing import Dict, Iterable
-from typing_extensions import Required, Annotated, TypedDict
+from typing_extensions import Literal, Required, Annotated, TypedDict
 
 from .._types import SequenceNotStr
 from .._utils import PropertyInfo
@@ -42,6 +42,9 @@ class OrderSendForEmployeeParams(TypedDict, total=False):
     Optional arbitrary metadata to store on the order (non-indexed passthrough,
     <=10KB when JSON stringified)
     """
+
+    priority: Literal["normal", "high"]
+    """Order priority level"""
 
     provider_created: Annotated[bool, PropertyInfo(alias="providerCreated")]
     """Whether this order is being created by a provider (affects permission checking)"""

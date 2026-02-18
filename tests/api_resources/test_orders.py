@@ -88,6 +88,7 @@ class TestOrders:
             employee_ids=["string"],
             employer_id="employerId",
             metadata={"foo": "bar"},
+            priority="normal",
             provider_created=True,
             providers_ids=[
                 {
@@ -213,6 +214,7 @@ class TestOrders:
                 "county": "county",
                 "street2": "street2",
             },
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             providers_ids=[
@@ -313,6 +315,7 @@ class TestOrders:
                 "county": "county",
                 "street2": "street2",
             },
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             quantities={"foo": 1},
@@ -405,6 +408,7 @@ class TestOrders:
                 "county": "county",
                 "street2": "street2",
             },
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             quantities={"foo": 1},
@@ -721,6 +725,7 @@ class TestOrders:
             due_date="dueDate",
             due_dates=["string"],
             metadata={"foo": "bar"},
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             quantities={"foo": 1},
@@ -961,6 +966,7 @@ class TestAsyncOrders:
             employee_ids=["string"],
             employer_id="employerId",
             metadata={"foo": "bar"},
+            priority="normal",
             provider_created=True,
             providers_ids=[
                 {
@@ -1086,6 +1092,7 @@ class TestAsyncOrders:
                 "county": "county",
                 "street2": "street2",
             },
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             providers_ids=[
@@ -1186,6 +1193,7 @@ class TestAsyncOrders:
                 "county": "county",
                 "street2": "street2",
             },
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             quantities={"foo": 1},
@@ -1278,6 +1286,7 @@ class TestAsyncOrders:
                 "county": "county",
                 "street2": "street2",
             },
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             quantities={"foo": 1},
@@ -1594,6 +1603,7 @@ class TestAsyncOrders:
             due_date="dueDate",
             due_dates=["string"],
             metadata={"foo": "bar"},
+            priority="normal",
             provider_created=True,
             provider_id="providerId",
             quantities={"foo": 1},
