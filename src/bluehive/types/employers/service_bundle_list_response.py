@@ -7,7 +7,22 @@ from pydantic import Field as FieldInfo
 
 from ..._models import BaseModel
 
-__all__ = ["ServiceBundleListResponse", "ServiceBundleListResponseItem"]
+__all__ = [
+    "ServiceBundleListResponse",
+    "ServiceBundleListResponseItem",
+    "ServiceBundleListResponseItemIntegrationData",
+    "ServiceBundleListResponseItemIntegrationDataEnterpriseHealth",
+]
+
+
+class ServiceBundleListResponseItemIntegrationDataEnterpriseHealth(BaseModel):
+    add_on_services: Optional[bool] = FieldInfo(alias="addOnServices", default=None)
+
+
+class ServiceBundleListResponseItemIntegrationData(BaseModel):
+    enterprise_health: Optional[ServiceBundleListResponseItemIntegrationDataEnterpriseHealth] = FieldInfo(
+        alias="enterprise-health", default=None
+    )
 
 
 class ServiceBundleListResponseItem(BaseModel):
@@ -34,6 +49,10 @@ class ServiceBundleListResponseItem(BaseModel):
     Name of the third-party integration that manages this bundle (e.g., "Enterprise
     Health"). Null if bundle was created in BlueHive.
     """
+
+    integration_data: Optional[ServiceBundleListResponseItemIntegrationData] = FieldInfo(
+        alias="integrationData", default=None
+    )
 
     limit: Optional[float] = None
 
