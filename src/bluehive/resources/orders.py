@@ -76,6 +76,7 @@ class OrdersResource(SyncAPIResource):
         employee_ids: SequenceNotStr[str] | Omit = omit,
         employer_id: str | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         providers_ids: Iterable[order_create_params.Variant0ProvidersID] | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -96,6 +97,8 @@ class OrdersResource(SyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -122,6 +125,7 @@ class OrdersResource(SyncAPIResource):
         metadata: Dict[str, object] | Omit = omit,
         payment_method: Literal["self-pay", "employer-sponsored"] | Omit = omit,
         person: order_create_params.Variant1Person | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         providers_ids: Iterable[order_create_params.Variant1ProvidersID] | Omit = omit,
@@ -143,6 +147,8 @@ class OrdersResource(SyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -170,6 +176,7 @@ class OrdersResource(SyncAPIResource):
         metadata: Dict[str, object] | Omit = omit,
         payment_method: Literal["self-pay", "employer-sponsored"] | Omit = omit,
         person: order_create_params.Variant2Person | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -190,6 +197,8 @@ class OrdersResource(SyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -217,6 +226,7 @@ class OrdersResource(SyncAPIResource):
         metadata: Dict[str, object] | Omit = omit,
         payment_method: Literal["self-pay", "employer-sponsored"] | Omit = omit,
         person: order_create_params.Variant3Person | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -237,6 +247,8 @@ class OrdersResource(SyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -277,6 +289,7 @@ class OrdersResource(SyncAPIResource):
         employee_ids: SequenceNotStr[str] | Omit = omit,
         employer_id: str | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         providers_ids: Iterable[order_create_params.Variant0ProvidersID]
         | Iterable[order_create_params.Variant1ProvidersID]
@@ -312,6 +325,7 @@ class OrdersResource(SyncAPIResource):
                         "employee_ids": employee_ids,
                         "employer_id": employer_id,
                         "metadata": metadata,
+                        "priority": priority,
                         "provider_created": provider_created,
                         "providers_ids": providers_ids,
                         "quantities": quantities,
@@ -533,6 +547,7 @@ class OrdersResource(SyncAPIResource):
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -566,6 +581,8 @@ class OrdersResource(SyncAPIResource):
           metadata: Optional arbitrary metadata to store on the order (non-indexed passthrough,
               <=10KB when JSON stringified)
 
+          priority: Order priority level
+
           provider_created: Whether this order is being created by a provider (affects permission checking)
 
           provider_id: Single provider ID (shortcut when all services map to one provider)
@@ -595,6 +612,7 @@ class OrdersResource(SyncAPIResource):
                         "due_date": due_date,
                         "due_dates": due_dates,
                         "metadata": metadata,
+                        "priority": priority,
                         "provider_created": provider_created,
                         "provider_id": provider_id,
                         "quantities": quantities,
@@ -747,6 +765,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         employee_ids: SequenceNotStr[str] | Omit = omit,
         employer_id: str | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         providers_ids: Iterable[order_create_params.Variant0ProvidersID] | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -767,6 +786,8 @@ class AsyncOrdersResource(AsyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -793,6 +814,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         metadata: Dict[str, object] | Omit = omit,
         payment_method: Literal["self-pay", "employer-sponsored"] | Omit = omit,
         person: order_create_params.Variant1Person | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         providers_ids: Iterable[order_create_params.Variant1ProvidersID] | Omit = omit,
@@ -814,6 +836,8 @@ class AsyncOrdersResource(AsyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -841,6 +865,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         metadata: Dict[str, object] | Omit = omit,
         payment_method: Literal["self-pay", "employer-sponsored"] | Omit = omit,
         person: order_create_params.Variant2Person | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -861,6 +886,8 @@ class AsyncOrdersResource(AsyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -888,6 +915,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         metadata: Dict[str, object] | Omit = omit,
         payment_method: Literal["self-pay", "employer-sponsored"] | Omit = omit,
         person: order_create_params.Variant3Person | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -908,6 +936,8 @@ class AsyncOrdersResource(AsyncAPIResource):
 
         Args:
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
+
+          priority: Order priority level
 
           extra_headers: Send extra headers
 
@@ -948,6 +978,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         employee_ids: SequenceNotStr[str] | Omit = omit,
         employer_id: str | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         providers_ids: Iterable[order_create_params.Variant0ProvidersID]
         | Iterable[order_create_params.Variant1ProvidersID]
@@ -983,6 +1014,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                         "employee_ids": employee_ids,
                         "employer_id": employer_id,
                         "metadata": metadata,
+                        "priority": priority,
                         "provider_created": provider_created,
                         "providers_ids": providers_ids,
                         "quantities": quantities,
@@ -1204,6 +1236,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
+        priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
         provider_id: str | Omit = omit,
         quantities: Dict[str, int] | Omit = omit,
@@ -1237,6 +1270,8 @@ class AsyncOrdersResource(AsyncAPIResource):
           metadata: Optional arbitrary metadata to store on the order (non-indexed passthrough,
               <=10KB when JSON stringified)
 
+          priority: Order priority level
+
           provider_created: Whether this order is being created by a provider (affects permission checking)
 
           provider_id: Single provider ID (shortcut when all services map to one provider)
@@ -1266,6 +1301,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                         "due_date": due_date,
                         "due_dates": due_dates,
                         "metadata": metadata,
+                        "priority": priority,
                         "provider_created": provider_created,
                         "provider_id": provider_id,
                         "quantities": quantities,

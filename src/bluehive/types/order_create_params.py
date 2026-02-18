@@ -56,6 +56,9 @@ class Variant0(TypedDict, total=False):
     metadata: Dict[str, object]
     """Optional arbitrary metadata (<=10KB when JSON stringified)"""
 
+    priority: Literal["normal", "high"]
+    """Order priority level"""
+
     provider_created: Annotated[bool, PropertyInfo(alias="providerCreated")]
 
     providers_ids: Annotated[Iterable[Variant0ProvidersID], PropertyInfo(alias="providersIds")]
@@ -134,6 +137,9 @@ class Variant1(TypedDict, total=False):
     payment_method: Annotated[Literal["self-pay", "employer-sponsored"], PropertyInfo(alias="paymentMethod")]
 
     person: Variant1Person
+
+    priority: Literal["normal", "high"]
+    """Order priority level"""
 
     provider_created: Annotated[bool, PropertyInfo(alias="providerCreated")]
 
@@ -218,6 +224,9 @@ class Variant2(TypedDict, total=False):
 
     person: Variant2Person
 
+    priority: Literal["normal", "high"]
+    """Order priority level"""
+
     provider_created: Annotated[bool, PropertyInfo(alias="providerCreated")]
 
     provider_id: Annotated[str, PropertyInfo(alias="providerId")]
@@ -298,6 +307,9 @@ class Variant3(TypedDict, total=False):
     payment_method: Annotated[Literal["self-pay", "employer-sponsored"], PropertyInfo(alias="paymentMethod")]
 
     person: Variant3Person
+
+    priority: Literal["normal", "high"]
+    """Order priority level"""
 
     provider_created: Annotated[bool, PropertyInfo(alias="providerCreated")]
 
