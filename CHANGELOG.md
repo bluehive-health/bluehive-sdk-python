@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.26 (2026-02-19)
+
+Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
+
+### Features
+
+* **api:** api update ([f869dd8](https://github.com/bluehive-health/bluehive-sdk-python/commit/f869dd8cd3346cce7b75d63dc6c7197c177c33c6))
+
+
+### Chores
+
+* format all `api.md` files ([466318c](https://github.com/bluehive-health/bluehive-sdk-python/commit/466318cee42aedee75172bb1939f1d791e826ae7))
+* **internal:** bump dependencies ([633238f](https://github.com/bluehive-health/bluehive-sdk-python/commit/633238fe14ef96c812ea0a055a2d18c2aae1c43b))
+* **internal:** fix lint error on Python 3.14 ([3e96d5c](https://github.com/bluehive-health/bluehive-sdk-python/commit/3e96d5cf9defb0f5487f058f03cab1a102046b86))
+
 ## 0.1.0-alpha.25 (2026-02-05)
 
 Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
