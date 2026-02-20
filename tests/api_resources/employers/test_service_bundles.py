@@ -22,7 +22,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestServiceBundles:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.create(
@@ -32,7 +32,7 @@ class TestServiceBundles:
         )
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.create(
@@ -48,7 +48,7 @@ class TestServiceBundles:
         )
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: BlueHive) -> None:
         response = client.employers.service_bundles.with_raw_response.create(
@@ -62,7 +62,7 @@ class TestServiceBundles:
         service_bundle = response.parse()
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: BlueHive) -> None:
         with client.employers.service_bundles.with_streaming_response.create(
@@ -78,7 +78,7 @@ class TestServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_create(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -88,7 +88,7 @@ class TestServiceBundles:
                 service_ids=["string"],
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.retrieve(
@@ -97,7 +97,7 @@ class TestServiceBundles:
         )
         assert_matches_type(ServiceBundleRetrieveResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: BlueHive) -> None:
         response = client.employers.service_bundles.with_raw_response.retrieve(
@@ -110,7 +110,7 @@ class TestServiceBundles:
         service_bundle = response.parse()
         assert_matches_type(ServiceBundleRetrieveResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: BlueHive) -> None:
         with client.employers.service_bundles.with_streaming_response.retrieve(
@@ -125,7 +125,7 @@ class TestServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -140,7 +140,7 @@ class TestServiceBundles:
                 employer_id="employerId",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.update(
@@ -151,7 +151,7 @@ class TestServiceBundles:
         )
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.update(
@@ -168,7 +168,7 @@ class TestServiceBundles:
         )
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: BlueHive) -> None:
         response = client.employers.service_bundles.with_raw_response.update(
@@ -183,7 +183,7 @@ class TestServiceBundles:
         service_bundle = response.parse()
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: BlueHive) -> None:
         with client.employers.service_bundles.with_streaming_response.update(
@@ -200,7 +200,7 @@ class TestServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -219,7 +219,7 @@ class TestServiceBundles:
                 service_ids=["string"],
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.list(
@@ -227,7 +227,7 @@ class TestServiceBundles:
         )
         assert_matches_type(ServiceBundleListResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: BlueHive) -> None:
         response = client.employers.service_bundles.with_raw_response.list(
@@ -239,7 +239,7 @@ class TestServiceBundles:
         service_bundle = response.parse()
         assert_matches_type(ServiceBundleListResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: BlueHive) -> None:
         with client.employers.service_bundles.with_streaming_response.list(
@@ -253,7 +253,7 @@ class TestServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -261,7 +261,7 @@ class TestServiceBundles:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: BlueHive) -> None:
         service_bundle = client.employers.service_bundles.delete(
@@ -270,7 +270,7 @@ class TestServiceBundles:
         )
         assert service_bundle is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: BlueHive) -> None:
         response = client.employers.service_bundles.with_raw_response.delete(
@@ -283,7 +283,7 @@ class TestServiceBundles:
         service_bundle = response.parse()
         assert service_bundle is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: BlueHive) -> None:
         with client.employers.service_bundles.with_streaming_response.delete(
@@ -298,7 +298,7 @@ class TestServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -319,7 +319,7 @@ class TestAsyncServiceBundles:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.create(
@@ -329,7 +329,7 @@ class TestAsyncServiceBundles:
         )
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.create(
@@ -345,7 +345,7 @@ class TestAsyncServiceBundles:
         )
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employers.service_bundles.with_raw_response.create(
@@ -359,7 +359,7 @@ class TestAsyncServiceBundles:
         service_bundle = await response.parse()
         assert_matches_type(ServiceBundleCreateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employers.service_bundles.with_streaming_response.create(
@@ -375,7 +375,7 @@ class TestAsyncServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_create(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -385,7 +385,7 @@ class TestAsyncServiceBundles:
                 service_ids=["string"],
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.retrieve(
@@ -394,7 +394,7 @@ class TestAsyncServiceBundles:
         )
         assert_matches_type(ServiceBundleRetrieveResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employers.service_bundles.with_raw_response.retrieve(
@@ -407,7 +407,7 @@ class TestAsyncServiceBundles:
         service_bundle = await response.parse()
         assert_matches_type(ServiceBundleRetrieveResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employers.service_bundles.with_streaming_response.retrieve(
@@ -422,7 +422,7 @@ class TestAsyncServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -437,7 +437,7 @@ class TestAsyncServiceBundles:
                 employer_id="employerId",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.update(
@@ -448,7 +448,7 @@ class TestAsyncServiceBundles:
         )
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.update(
@@ -465,7 +465,7 @@ class TestAsyncServiceBundles:
         )
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employers.service_bundles.with_raw_response.update(
@@ -480,7 +480,7 @@ class TestAsyncServiceBundles:
         service_bundle = await response.parse()
         assert_matches_type(ServiceBundleUpdateResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employers.service_bundles.with_streaming_response.update(
@@ -497,7 +497,7 @@ class TestAsyncServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -516,7 +516,7 @@ class TestAsyncServiceBundles:
                 service_ids=["string"],
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.list(
@@ -524,7 +524,7 @@ class TestAsyncServiceBundles:
         )
         assert_matches_type(ServiceBundleListResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employers.service_bundles.with_raw_response.list(
@@ -536,7 +536,7 @@ class TestAsyncServiceBundles:
         service_bundle = await response.parse()
         assert_matches_type(ServiceBundleListResponse, service_bundle, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employers.service_bundles.with_streaming_response.list(
@@ -550,7 +550,7 @@ class TestAsyncServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
@@ -558,7 +558,7 @@ class TestAsyncServiceBundles:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncBlueHive) -> None:
         service_bundle = await async_client.employers.service_bundles.delete(
@@ -567,7 +567,7 @@ class TestAsyncServiceBundles:
         )
         assert service_bundle is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employers.service_bundles.with_raw_response.delete(
@@ -580,7 +580,7 @@ class TestAsyncServiceBundles:
         service_bundle = await response.parse()
         assert service_bundle is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employers.service_bundles.with_streaming_response.delete(
@@ -595,7 +595,7 @@ class TestAsyncServiceBundles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employer_id` but received ''"):
