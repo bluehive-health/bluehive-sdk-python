@@ -25,7 +25,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestEmployees:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: BlueHive) -> None:
         employee = client.employees.create(
@@ -35,7 +35,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeCreateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: BlueHive) -> None:
         employee = client.employees.create(
@@ -72,7 +72,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeCreateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.create(
@@ -86,7 +86,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeCreateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.create(
@@ -102,7 +102,7 @@ class TestEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: BlueHive) -> None:
         employee = client.employees.retrieve(
@@ -110,7 +110,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeRetrieveResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.retrieve(
@@ -122,7 +122,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeRetrieveResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.retrieve(
@@ -136,7 +136,7 @@ class TestEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employee_id` but received ''"):
@@ -144,7 +144,7 @@ class TestEmployees:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: BlueHive) -> None:
         employee = client.employees.update(
@@ -152,7 +152,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeUpdateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: BlueHive) -> None:
         employee = client.employees.update(
@@ -190,7 +190,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeUpdateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.update(
@@ -202,7 +202,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeUpdateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.update(
@@ -216,7 +216,7 @@ class TestEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: BlueHive) -> None:
         employee = client.employees.list(
@@ -224,7 +224,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: BlueHive) -> None:
         employee = client.employees.list(
@@ -234,7 +234,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.list(
@@ -246,7 +246,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.list(
@@ -260,7 +260,7 @@ class TestEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: BlueHive) -> None:
         employee = client.employees.delete(
@@ -268,7 +268,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeDeleteResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.delete(
@@ -280,7 +280,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeDeleteResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.delete(
@@ -294,7 +294,7 @@ class TestEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employee_id` but received ''"):
@@ -302,7 +302,7 @@ class TestEmployees:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_link_user(self, client: BlueHive) -> None:
         employee = client.employees.link_user(
@@ -311,7 +311,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeLinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_link_user_with_all_params(self, client: BlueHive) -> None:
         employee = client.employees.link_user(
@@ -321,7 +321,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeLinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_link_user(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.link_user(
@@ -334,7 +334,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeLinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_link_user(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.link_user(
@@ -349,7 +349,7 @@ class TestEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_unlink_user(self, client: BlueHive) -> None:
         employee = client.employees.unlink_user(
@@ -358,7 +358,7 @@ class TestEmployees:
         )
         assert_matches_type(EmployeeUnlinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_unlink_user(self, client: BlueHive) -> None:
         response = client.employees.with_raw_response.unlink_user(
@@ -371,7 +371,7 @@ class TestEmployees:
         employee = response.parse()
         assert_matches_type(EmployeeUnlinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_unlink_user(self, client: BlueHive) -> None:
         with client.employees.with_streaming_response.unlink_user(
@@ -392,7 +392,7 @@ class TestAsyncEmployees:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.create(
@@ -402,7 +402,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeCreateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.create(
@@ -439,7 +439,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeCreateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.create(
@@ -453,7 +453,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeCreateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.create(
@@ -469,7 +469,7 @@ class TestAsyncEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.retrieve(
@@ -477,7 +477,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeRetrieveResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.retrieve(
@@ -489,7 +489,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeRetrieveResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.retrieve(
@@ -503,7 +503,7 @@ class TestAsyncEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employee_id` but received ''"):
@@ -511,7 +511,7 @@ class TestAsyncEmployees:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.update(
@@ -519,7 +519,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeUpdateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.update(
@@ -557,7 +557,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeUpdateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.update(
@@ -569,7 +569,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeUpdateResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.update(
@@ -583,7 +583,7 @@ class TestAsyncEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.list(
@@ -591,7 +591,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.list(
@@ -601,7 +601,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.list(
@@ -613,7 +613,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.list(
@@ -627,7 +627,7 @@ class TestAsyncEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.delete(
@@ -635,7 +635,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeDeleteResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.delete(
@@ -647,7 +647,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeDeleteResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.delete(
@@ -661,7 +661,7 @@ class TestAsyncEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `employee_id` but received ''"):
@@ -669,7 +669,7 @@ class TestAsyncEmployees:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_link_user(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.link_user(
@@ -678,7 +678,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeLinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_link_user_with_all_params(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.link_user(
@@ -688,7 +688,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeLinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_link_user(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.link_user(
@@ -701,7 +701,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeLinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_link_user(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.link_user(
@@ -716,7 +716,7 @@ class TestAsyncEmployees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_unlink_user(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.unlink_user(
@@ -725,7 +725,7 @@ class TestAsyncEmployees:
         )
         assert_matches_type(EmployeeUnlinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_unlink_user(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.employees.with_raw_response.unlink_user(
@@ -738,7 +738,7 @@ class TestAsyncEmployees:
         employee = await response.parse()
         assert_matches_type(EmployeeUnlinkUserResponse, employee, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_unlink_user(self, async_client: AsyncBlueHive) -> None:
         async with async_client.employees.with_streaming_response.unlink_user(

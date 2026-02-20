@@ -16,7 +16,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestHl7:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send_results(self, client: BlueHive) -> None:
         hl7 = client.hl7.send_results(
@@ -29,7 +29,7 @@ class TestHl7:
         )
         assert_matches_type(str, hl7, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_send_results(self, client: BlueHive) -> None:
         response = client.hl7.with_raw_response.send_results(
@@ -46,7 +46,7 @@ class TestHl7:
         hl7 = response.parse()
         assert_matches_type(str, hl7, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_send_results(self, client: BlueHive) -> None:
         with client.hl7.with_streaming_response.send_results(
@@ -71,7 +71,7 @@ class TestAsyncHl7:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send_results(self, async_client: AsyncBlueHive) -> None:
         hl7 = await async_client.hl7.send_results(
@@ -84,7 +84,7 @@ class TestAsyncHl7:
         )
         assert_matches_type(str, hl7, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_send_results(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.hl7.with_raw_response.send_results(
@@ -101,7 +101,7 @@ class TestAsyncHl7:
         hl7 = await response.parse()
         assert_matches_type(str, hl7, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_send_results(self, async_client: AsyncBlueHive) -> None:
         async with async_client.hl7.with_streaming_response.send_results(
