@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestProviders:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_lookup(self, client: BlueHive) -> None:
         provider = client.providers.lookup()
         assert_matches_type(ProviderLookupResponse, provider, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_lookup_with_all_params(self, client: BlueHive) -> None:
         provider = client.providers.lookup(
@@ -34,7 +34,7 @@ class TestProviders:
         )
         assert_matches_type(ProviderLookupResponse, provider, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_lookup(self, client: BlueHive) -> None:
         response = client.providers.with_raw_response.lookup()
@@ -44,7 +44,7 @@ class TestProviders:
         provider = response.parse()
         assert_matches_type(ProviderLookupResponse, provider, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_lookup(self, client: BlueHive) -> None:
         with client.providers.with_streaming_response.lookup() as response:
@@ -62,13 +62,13 @@ class TestAsyncProviders:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_lookup(self, async_client: AsyncBlueHive) -> None:
         provider = await async_client.providers.lookup()
         assert_matches_type(ProviderLookupResponse, provider, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_lookup_with_all_params(self, async_client: AsyncBlueHive) -> None:
         provider = await async_client.providers.lookup(
@@ -79,7 +79,7 @@ class TestAsyncProviders:
         )
         assert_matches_type(ProviderLookupResponse, provider, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_lookup(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.providers.with_raw_response.lookup()
@@ -89,7 +89,7 @@ class TestAsyncProviders:
         provider = await response.parse()
         assert_matches_type(ProviderLookupResponse, provider, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_lookup(self, async_client: AsyncBlueHive) -> None:
         async with async_client.providers.with_streaming_response.lookup() as response:

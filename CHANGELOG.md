@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.27 (2026-02-20)
+
+Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
+
+### Chores
+
+* **internal:** remove mock server code ([d6ec1f2](https://github.com/bluehive-health/bluehive-sdk-python/commit/d6ec1f2593f7b2fa72d88053b9f8edc24b14053c))
+* update mock server docs ([e49e70a](https://github.com/bluehive-health/bluehive-sdk-python/commit/e49e70ade771dd8c8487ac3b544f5da11d3377c9))
+
 ## 0.1.0-alpha.26 (2026-02-19)
 
 Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
