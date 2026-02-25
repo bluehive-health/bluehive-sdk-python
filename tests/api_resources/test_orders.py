@@ -27,7 +27,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestOrders:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_overload_1(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -53,7 +53,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params_overload_1(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -103,7 +103,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_overload_1(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.create(
@@ -133,7 +133,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_overload_1(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.create(
@@ -165,7 +165,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_overload_2(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -180,7 +180,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params_overload_2(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -230,7 +230,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_overload_2(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.create(
@@ -249,7 +249,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_overload_2(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.create(
@@ -270,7 +270,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_overload_3(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -281,7 +281,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params_overload_3(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -331,7 +331,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_overload_3(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.create(
@@ -346,7 +346,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_overload_3(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.create(
@@ -363,7 +363,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_overload_4(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -374,7 +374,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params_overload_4(self, client: BlueHive) -> None:
         order = client.orders.create(
@@ -424,7 +424,7 @@ class TestOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_overload_4(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.create(
@@ -439,7 +439,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_overload_4(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.create(
@@ -456,7 +456,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: BlueHive) -> None:
         order = client.orders.retrieve(
@@ -464,7 +464,7 @@ class TestOrders:
         )
         assert_matches_type(OrderRetrieveResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.retrieve(
@@ -476,7 +476,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderRetrieveResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.retrieve(
@@ -490,7 +490,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -498,7 +498,7 @@ class TestOrders:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: BlueHive) -> None:
         order = client.orders.update(
@@ -506,7 +506,7 @@ class TestOrders:
         )
         assert_matches_type(OrderUpdateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.update(
@@ -524,7 +524,7 @@ class TestOrders:
         )
         assert_matches_type(OrderUpdateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.update(
@@ -536,7 +536,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderUpdateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.update(
@@ -550,7 +550,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -558,7 +558,7 @@ class TestOrders:
                 order_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_results(self, client: BlueHive) -> None:
         order = client.orders.retrieve_results(
@@ -566,7 +566,7 @@ class TestOrders:
         )
         assert_matches_type(OrderRetrieveResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_results_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.retrieve_results(
@@ -580,7 +580,7 @@ class TestOrders:
         )
         assert_matches_type(OrderRetrieveResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_results(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.retrieve_results(
@@ -592,7 +592,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderRetrieveResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_results(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.retrieve_results(
@@ -606,7 +606,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve_results(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -614,7 +614,7 @@ class TestOrders:
                 order_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_schedule_appointment(self, client: BlueHive) -> None:
         order = client.orders.schedule_appointment(
@@ -627,7 +627,7 @@ class TestOrders:
         )
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_schedule_appointment_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.schedule_appointment(
@@ -644,7 +644,7 @@ class TestOrders:
         )
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_schedule_appointment(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.schedule_appointment(
@@ -661,7 +661,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_schedule_appointment(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.schedule_appointment(
@@ -680,7 +680,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_schedule_appointment(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -693,7 +693,7 @@ class TestOrders:
                 },
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send_for_employee(self, client: BlueHive) -> None:
         order = client.orders.send_for_employee(
@@ -706,7 +706,7 @@ class TestOrders:
         )
         assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send_for_employee_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.send_for_employee(
@@ -732,7 +732,7 @@ class TestOrders:
         )
         assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_send_for_employee(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.send_for_employee(
@@ -749,7 +749,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_send_for_employee(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.send_for_employee(
@@ -768,7 +768,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_status(self, client: BlueHive) -> None:
         order = client.orders.update_status(
@@ -777,7 +777,7 @@ class TestOrders:
         )
         assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_status_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.update_status(
@@ -787,7 +787,7 @@ class TestOrders:
         )
         assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update_status(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.update_status(
@@ -800,7 +800,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update_status(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.update_status(
@@ -815,7 +815,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update_status(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -824,7 +824,7 @@ class TestOrders:
                 status="order_sent",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_upload_results(self, client: BlueHive) -> None:
         order = client.orders.upload_results(
@@ -835,7 +835,7 @@ class TestOrders:
         )
         assert_matches_type(OrderUploadResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_upload_results_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.upload_results(
@@ -856,7 +856,7 @@ class TestOrders:
         )
         assert_matches_type(OrderUploadResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_upload_results(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.upload_results(
@@ -871,7 +871,7 @@ class TestOrders:
         order = response.parse()
         assert_matches_type(OrderUploadResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_upload_results(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.upload_results(
@@ -888,7 +888,7 @@ class TestOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_upload_results(self, client: BlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -905,7 +905,7 @@ class TestAsyncOrders:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_overload_1(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -931,7 +931,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params_overload_1(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -981,7 +981,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_overload_1(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.create(
@@ -1011,7 +1011,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_overload_1(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.create(
@@ -1043,7 +1043,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_overload_2(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -1058,7 +1058,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params_overload_2(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -1108,7 +1108,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_overload_2(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.create(
@@ -1127,7 +1127,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_overload_2(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.create(
@@ -1148,7 +1148,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_overload_3(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -1159,7 +1159,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params_overload_3(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -1209,7 +1209,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_overload_3(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.create(
@@ -1224,7 +1224,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_overload_3(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.create(
@@ -1241,7 +1241,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_overload_4(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -1252,7 +1252,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params_overload_4(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.create(
@@ -1302,7 +1302,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_overload_4(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.create(
@@ -1317,7 +1317,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderCreateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_overload_4(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.create(
@@ -1334,7 +1334,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.retrieve(
@@ -1342,7 +1342,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderRetrieveResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.retrieve(
@@ -1354,7 +1354,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderRetrieveResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.retrieve(
@@ -1368,7 +1368,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -1376,7 +1376,7 @@ class TestAsyncOrders:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.update(
@@ -1384,7 +1384,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderUpdateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.update(
@@ -1402,7 +1402,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderUpdateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.update(
@@ -1414,7 +1414,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderUpdateResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.update(
@@ -1428,7 +1428,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -1436,7 +1436,7 @@ class TestAsyncOrders:
                 order_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_results(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.retrieve_results(
@@ -1444,7 +1444,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderRetrieveResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_results_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.retrieve_results(
@@ -1458,7 +1458,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderRetrieveResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_results(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.retrieve_results(
@@ -1470,7 +1470,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderRetrieveResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_results(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.retrieve_results(
@@ -1484,7 +1484,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve_results(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -1492,7 +1492,7 @@ class TestAsyncOrders:
                 order_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_schedule_appointment(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.schedule_appointment(
@@ -1505,7 +1505,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_schedule_appointment_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.schedule_appointment(
@@ -1522,7 +1522,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_schedule_appointment(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.schedule_appointment(
@@ -1539,7 +1539,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_schedule_appointment(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.schedule_appointment(
@@ -1558,7 +1558,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_schedule_appointment(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -1571,7 +1571,7 @@ class TestAsyncOrders:
                 },
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send_for_employee(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.send_for_employee(
@@ -1584,7 +1584,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send_for_employee_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.send_for_employee(
@@ -1610,7 +1610,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_send_for_employee(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.send_for_employee(
@@ -1627,7 +1627,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_send_for_employee(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.send_for_employee(
@@ -1646,7 +1646,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_status(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.update_status(
@@ -1655,7 +1655,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_status_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.update_status(
@@ -1665,7 +1665,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update_status(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.update_status(
@@ -1678,7 +1678,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update_status(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.update_status(
@@ -1693,7 +1693,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update_status(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
@@ -1702,7 +1702,7 @@ class TestAsyncOrders:
                 status="order_sent",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_upload_results(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.upload_results(
@@ -1713,7 +1713,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderUploadResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_upload_results_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.upload_results(
@@ -1734,7 +1734,7 @@ class TestAsyncOrders:
         )
         assert_matches_type(OrderUploadResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_upload_results(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.upload_results(
@@ -1749,7 +1749,7 @@ class TestAsyncOrders:
         order = await response.parse()
         assert_matches_type(OrderUploadResultsResponse, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_upload_results(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.upload_results(
@@ -1766,7 +1766,7 @@ class TestAsyncOrders:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_upload_results(self, async_client: AsyncBlueHive) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):

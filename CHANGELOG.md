@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.0-alpha.27 (2026-02-25)
+
+Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
+
+### Chores
+
+* **internal:** add request options to SSE classes ([b8e46cb](https://github.com/bluehive-health/bluehive-sdk-python/commit/b8e46cb43d874ac1b11438daf6e1922374c5701c))
+* **internal:** make `test_proxy_environment_variables` more resilient ([731b94a](https://github.com/bluehive-health/bluehive-sdk-python/commit/731b94aed527ecb9b44f54188151f93d9e8fcb75))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([0ff5ef7](https://github.com/bluehive-health/bluehive-sdk-python/commit/0ff5ef75aa8d0ea4e42f4b7c1f36e9560aac0477))
+* **internal:** remove mock server code ([d6ec1f2](https://github.com/bluehive-health/bluehive-sdk-python/commit/d6ec1f2593f7b2fa72d88053b9f8edc24b14053c))
+* update mock server docs ([e49e70a](https://github.com/bluehive-health/bluehive-sdk-python/commit/e49e70ade771dd8c8487ac3b544f5da11d3377c9))
+
 ## 0.1.0-alpha.26 (2026-02-19)
 
 Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
