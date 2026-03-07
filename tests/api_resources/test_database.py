@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestDatabase:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_health(self, client: BlueHive) -> None:
         database = client.database.check_health()
         assert_matches_type(DatabaseCheckHealthResponse, database, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_check_health(self, client: BlueHive) -> None:
         response = client.database.with_raw_response.check_health()
@@ -33,7 +33,7 @@ class TestDatabase:
         database = response.parse()
         assert_matches_type(DatabaseCheckHealthResponse, database, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_check_health(self, client: BlueHive) -> None:
         with client.database.with_streaming_response.check_health() as response:
@@ -51,13 +51,13 @@ class TestAsyncDatabase:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_health(self, async_client: AsyncBlueHive) -> None:
         database = await async_client.database.check_health()
         assert_matches_type(DatabaseCheckHealthResponse, database, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_check_health(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.database.with_raw_response.check_health()
@@ -67,7 +67,7 @@ class TestAsyncDatabase:
         database = await response.parse()
         assert_matches_type(DatabaseCheckHealthResponse, database, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_check_health(self, async_client: AsyncBlueHive) -> None:
         async with async_client.database.with_streaming_response.check_health() as response:
