@@ -229,8 +229,10 @@ class TestEmployees:
     def test_method_list_with_all_params(self, client: BlueHive) -> None:
         employee = client.employees.list(
             employer_id="employerId",
+            active_account="Active",
             limit="269125115713",
             offset="269125115713",
+            search="search",
         )
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
@@ -596,8 +598,10 @@ class TestAsyncEmployees:
     async def test_method_list_with_all_params(self, async_client: AsyncBlueHive) -> None:
         employee = await async_client.employees.list(
             employer_id="employerId",
+            active_account="Active",
             limit="269125115713",
             offset="269125115713",
+            search="search",
         )
         assert_matches_type(EmployeeListResponse, employee, path=["response"])
 
