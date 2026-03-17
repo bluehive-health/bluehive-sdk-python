@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.28 (2026-03-17)
+
+Full Changelog: [v0.1.0-alpha.27...v0.1.0-alpha.28](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.27...v0.1.0-alpha.28)
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([d922315](https://github.com/bluehive-health/bluehive-sdk-python/commit/d9223159d5710ca581740182f04453e3675fd11e))
+
 ## 0.1.0-alpha.27 (2026-03-17)
 
 Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
