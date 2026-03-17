@@ -213,8 +213,10 @@ class EmployeesResource(SyncAPIResource):
         self,
         *,
         employer_id: str,
+        active_account: Literal["Active", "Inactive"] | Omit = omit,
         limit: str | Omit = omit,
         offset: str | Omit = omit,
+        search: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -228,9 +230,15 @@ class EmployeesResource(SyncAPIResource):
         Args:
           employer_id: ID of the employer to list employees for
 
+          active_account: Filter by account status. If omitted, returns all employees regardless of
+              status.
+
           limit: Maximum number of employees to return (default: 50)
 
           offset: Number of employees to skip (default: 0)
+
+          search: Search term to filter employees by first name, last name, or email
+              (case-insensitive)
 
           extra_headers: Send extra headers
 
@@ -250,8 +258,10 @@ class EmployeesResource(SyncAPIResource):
                 query=maybe_transform(
                     {
                         "employer_id": employer_id,
+                        "active_account": active_account,
                         "limit": limit,
                         "offset": offset,
+                        "search": search,
                     },
                     employee_list_params.EmployeeListParams,
                 ),
@@ -559,8 +569,10 @@ class AsyncEmployeesResource(AsyncAPIResource):
         self,
         *,
         employer_id: str,
+        active_account: Literal["Active", "Inactive"] | Omit = omit,
         limit: str | Omit = omit,
         offset: str | Omit = omit,
+        search: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -574,9 +586,15 @@ class AsyncEmployeesResource(AsyncAPIResource):
         Args:
           employer_id: ID of the employer to list employees for
 
+          active_account: Filter by account status. If omitted, returns all employees regardless of
+              status.
+
           limit: Maximum number of employees to return (default: 50)
 
           offset: Number of employees to skip (default: 0)
+
+          search: Search term to filter employees by first name, last name, or email
+              (case-insensitive)
 
           extra_headers: Send extra headers
 
@@ -596,8 +614,10 @@ class AsyncEmployeesResource(AsyncAPIResource):
                 query=await async_maybe_transform(
                     {
                         "employer_id": employer_id,
+                        "active_account": active_account,
                         "limit": limit,
                         "offset": offset,
+                        "search": search,
                     },
                     employee_list_params.EmployeeListParams,
                 ),
