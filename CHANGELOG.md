@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.30 (2026-03-20)
+
+Full Changelog: [v0.1.0-alpha.29...v0.1.0-alpha.30](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.29...v0.1.0-alpha.30)
+
+### Bug Fixes
+
+* sanitize endpoint path params ([7f4c286](https://github.com/bluehive-health/bluehive-sdk-python/commit/7f4c2862ab5eb27bad7d043885aee5bd69081205))
+
 ## 0.1.0-alpha.29 (2026-03-17)
 
 Full Changelog: [v0.1.0-alpha.28...v0.1.0-alpha.29](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.28...v0.1.0-alpha.29)
