@@ -14,7 +14,7 @@ __all__ = ["OrderScheduleAppointmentParams", "Appointment", "AppointmentUnionMem
 class OrderScheduleAppointmentParams(TypedDict, total=False):
     appointment: Required[Appointment]
 
-    order_access_code: Annotated[str, PropertyInfo(alias="orderAccessCode")]
+    order_access_code: Required[Annotated[str, PropertyInfo(alias="orderAccessCode")]]
     """Order access code for authorization"""
 
     provider_id: Annotated[str, PropertyInfo(alias="providerId")]

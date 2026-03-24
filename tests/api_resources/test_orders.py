@@ -624,6 +624,7 @@ class TestOrders:
                 "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "time": "time",
             },
+            order_access_code="orderAccessCode",
         )
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
@@ -654,6 +655,7 @@ class TestOrders:
                 "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "time": "time",
             },
+            order_access_code="orderAccessCode",
         )
 
         assert response.is_closed is True
@@ -671,6 +673,7 @@ class TestOrders:
                 "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "time": "time",
             },
+            order_access_code="orderAccessCode",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -691,6 +694,7 @@ class TestOrders:
                     "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                     "time": "time",
                 },
+                order_access_code="orderAccessCode",
             )
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
@@ -1502,6 +1506,7 @@ class TestAsyncOrders:
                 "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "time": "time",
             },
+            order_access_code="orderAccessCode",
         )
         assert_matches_type(OrderScheduleAppointmentResponse, order, path=["response"])
 
@@ -1532,6 +1537,7 @@ class TestAsyncOrders:
                 "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "time": "time",
             },
+            order_access_code="orderAccessCode",
         )
 
         assert response.is_closed is True
@@ -1549,6 +1555,7 @@ class TestAsyncOrders:
                 "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "time": "time",
             },
+            order_access_code="orderAccessCode",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -1569,6 +1576,7 @@ class TestAsyncOrders:
                     "date_time": parse_datetime("2019-12-27T18:11:19.117Z"),
                     "time": "time",
                 },
+                order_access_code="orderAccessCode",
             )
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
