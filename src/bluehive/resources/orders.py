@@ -489,7 +489,7 @@ class OrdersResource(SyncAPIResource):
         order_id: str,
         *,
         appointment: order_schedule_appointment_params.Appointment,
-        order_access_code: str | Omit = omit,
+        order_access_code: str,
         provider_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -1178,7 +1178,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         order_id: str,
         *,
         appointment: order_schedule_appointment_params.Appointment,
-        order_access_code: str | Omit = omit,
+        order_access_code: str,
         provider_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
