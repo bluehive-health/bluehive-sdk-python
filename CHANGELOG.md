@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.32 (2026-03-27)
+
+Full Changelog: [v0.1.0-alpha.31...v0.1.0-alpha.32](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.31...v0.1.0-alpha.32)
+
+### Features
+
+* **internal:** implement indices array format for query and form serialization ([3c9e733](https://github.com/bluehive-health/bluehive-sdk-python/commit/3c9e7331dca8019f2b7089aba2531835708fb858))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([3e8e941](https://github.com/bluehive-health/bluehive-sdk-python/commit/3e8e9418a7b2c31577ce45ec0374f6f8fe571a1a))
+
 ## 0.1.0-alpha.31 (2026-03-24)
 
 Full Changelog: [v0.1.0-alpha.30...v0.1.0-alpha.31](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.30...v0.1.0-alpha.31)
