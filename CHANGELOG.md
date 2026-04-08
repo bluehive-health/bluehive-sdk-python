@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.33 (2026-04-08)
+
+Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
+
+### Bug Fixes
+
+* **client:** preserve hardcoded query params when merging with user params ([31eaaa3](https://github.com/bluehive-health/bluehive-sdk-python/commit/31eaaa37a0c02725b83e523d0466949f04bf2f63))
+
 ## 0.1.0-alpha.32 (2026-03-27)
 
 Full Changelog: [v0.1.0-alpha.31...v0.1.0-alpha.32](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.31...v0.1.0-alpha.32)
