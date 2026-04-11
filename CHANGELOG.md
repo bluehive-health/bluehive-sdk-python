@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.34 (2026-04-11)
+
+Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
+
+### Bug Fixes
+
+* ensure file data are only sent as 1 parameter ([66c9bda](https://github.com/bluehive-health/bluehive-sdk-python/commit/66c9bda478d42122ae69f338b2260f5e6c7b6a8b))
+
 ## 0.1.0-alpha.33 (2026-04-08)
 
 Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
