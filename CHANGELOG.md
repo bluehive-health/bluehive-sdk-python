@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.35 (2026-04-28)
+
+Full Changelog: [v0.1.0-alpha.34...v0.1.0-alpha.35](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.34...v0.1.0-alpha.35)
+
+### Features
+
+* support setting headers via env ([2ff92d4](https://github.com/bluehive-health/bluehive-sdk-python/commit/2ff92d492615a5b711c54673d124c5ff409122b2))
+
+
+### Bug Fixes
+
+* use correct field name format for multipart file arrays ([b09e264](https://github.com/bluehive-health/bluehive-sdk-python/commit/b09e264c53268ae45e7513536af79a85e608392c))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([fd64559](https://github.com/bluehive-health/bluehive-sdk-python/commit/fd64559a87ea6d6c37adbdf482c99a5a4b9e50f2))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([bc00077](https://github.com/bluehive-health/bluehive-sdk-python/commit/bc000773e6081e1ae21e34b2acdbed100a7115aa))
+
 ## 0.1.0-alpha.34 (2026-04-11)
 
 Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
