@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.36 (2026-05-09)
+
+Full Changelog: [v0.1.0-alpha.35...v0.1.0-alpha.36](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.35...v0.1.0-alpha.36)
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([5a70022](https://github.com/bluehive-health/bluehive-sdk-python/commit/5a70022d5d6a05882a8279733ba76065f754abdf))
+
+
+### Chores
+
+* **internal:** reformat pyproject.toml ([2881f16](https://github.com/bluehive-health/bluehive-sdk-python/commit/2881f16eeff4e23a4a104a136f7e6f51bb177fac))
+
 ## 0.1.0-alpha.35 (2026-04-28)
 
 Full Changelog: [v0.1.0-alpha.34...v0.1.0-alpha.35](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.34...v0.1.0-alpha.35)
