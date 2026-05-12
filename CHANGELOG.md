@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.37 (2026-05-12)
+
+Full Changelog: [v0.1.0-alpha.36...v0.1.0-alpha.37](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.36...v0.1.0-alpha.37)
+
+### Features
+
+* **internal/types:** support eagerly validating pydantic iterators ([bb808d2](https://github.com/bluehive-health/bluehive-sdk-python/commit/bb808d2c1bb00b8cff75c1c60403b770d7b5cb42))
+
 ## 0.1.0-alpha.36 (2026-05-09)
 
 Full Changelog: [v0.1.0-alpha.35...v0.1.0-alpha.36](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.35...v0.1.0-alpha.36)
