@@ -37,6 +37,9 @@ class OrderSendForEmployeeParams(TypedDict, total=False):
     due_dates: Annotated[SequenceNotStr[str], PropertyInfo(alias="dueDates")]
     """Array of due dates per service"""
 
+    expiration_date: Annotated[str, PropertyInfo(alias="expirationDate")]
+    """Expiration date for the order (date or date-time ISO string)"""
+
     metadata: Dict[str, object]
     """
     Optional arbitrary metadata to store on the order (non-indexed passthrough,
