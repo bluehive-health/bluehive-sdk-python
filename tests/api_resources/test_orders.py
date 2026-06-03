@@ -511,11 +511,13 @@ class TestOrders:
     def test_method_update_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.update(
             order_id="orderId",
+            expiration_date=parse_datetime("2019-12-27T18:11:19.117Z"),
             metadata={"foo": "bar"},
             services=[
                 {
                     "service_id": "x",
                     "due_date": parse_datetime("2019-12-27T18:11:19.117Z"),
+                    "expiration_date": parse_datetime("2019-12-27T18:11:19.117Z"),
                     "results": {"foo": "bar"},
                     "status": "pending",
                 }
@@ -728,6 +730,7 @@ class TestOrders:
             brand_id="brandId",
             due_date="dueDate",
             due_dates=["string"],
+            expiration_date="expirationDate",
             metadata={"foo": "bar"},
             priority="normal",
             provider_created=True,
@@ -1393,11 +1396,13 @@ class TestAsyncOrders:
     async def test_method_update_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.update(
             order_id="orderId",
+            expiration_date=parse_datetime("2019-12-27T18:11:19.117Z"),
             metadata={"foo": "bar"},
             services=[
                 {
                     "service_id": "x",
                     "due_date": parse_datetime("2019-12-27T18:11:19.117Z"),
+                    "expiration_date": parse_datetime("2019-12-27T18:11:19.117Z"),
                     "results": {"foo": "bar"},
                     "status": "pending",
                 }
@@ -1610,6 +1615,7 @@ class TestAsyncOrders:
             brand_id="brandId",
             due_date="dueDate",
             due_dates=["string"],
+            expiration_date="expirationDate",
             metadata={"foo": "bar"},
             priority="normal",
             provider_created=True,

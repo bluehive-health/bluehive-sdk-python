@@ -12,6 +12,12 @@ __all__ = ["OrderUpdateParams", "Service"]
 
 
 class OrderUpdateParams(TypedDict, total=False):
+    expiration_date: Annotated[Union[str, datetime, None], PropertyInfo(alias="expirationDate", format="iso8601")]
+    """Order expiration date (ISO 8601 format).
+
+    Set to null to remove the expiration date.
+    """
+
     metadata: Dict[str, object]
     """
     Arbitrary metadata to update on the order (non-indexed passthrough, <=10KB when
@@ -29,6 +35,9 @@ class Service(TypedDict, total=False):
     service_id: Required[Annotated[str, PropertyInfo(alias="serviceId")]]
 
     due_date: Annotated[Union[str, datetime], PropertyInfo(alias="dueDate", format="iso8601")]
+
+    expiration_date: Annotated[Union[str, datetime], PropertyInfo(alias="expirationDate", format="iso8601")]
+    """Service-level expiration date"""
 
     results: Dict[str, object]
 
