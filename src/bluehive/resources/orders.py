@@ -381,6 +381,7 @@ class OrdersResource(SyncAPIResource):
         self,
         order_id: str,
         *,
+        expiration_date: Union[str, datetime, None] | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
         services: Iterable[order_update_params.Service] | Omit = omit,
         status: Literal[
@@ -400,6 +401,9 @@ class OrdersResource(SyncAPIResource):
         metadata, and modifying order item services.
 
         Args:
+          expiration_date: Order expiration date (ISO 8601 format). Set to null to remove the expiration
+              date.
+
           metadata: Arbitrary metadata to update on the order (non-indexed passthrough, <=10KB when
               JSON stringified)
 
@@ -417,6 +421,7 @@ class OrdersResource(SyncAPIResource):
             path_template("/v1/orders/{order_id}", order_id=order_id),
             body=maybe_transform(
                 {
+                    "expiration_date": expiration_date,
                     "metadata": metadata,
                     "services": services,
                     "status": status,
@@ -546,6 +551,7 @@ class OrdersResource(SyncAPIResource):
         brand_id: str | Omit = omit,
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
+        expiration_date: str | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
         priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
@@ -577,6 +583,8 @@ class OrdersResource(SyncAPIResource):
           due_date: Due date for the order (date or date-time ISO string)
 
           due_dates: Array of due dates per service
+
+          expiration_date: Expiration date for the order (date or date-time ISO string)
 
           metadata: Optional arbitrary metadata to store on the order (non-indexed passthrough,
               <=10KB when JSON stringified)
@@ -611,6 +619,7 @@ class OrdersResource(SyncAPIResource):
                         "brand_id": brand_id,
                         "due_date": due_date,
                         "due_dates": due_dates,
+                        "expiration_date": expiration_date,
                         "metadata": metadata,
                         "priority": priority,
                         "provider_created": provider_created,
@@ -1070,6 +1079,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         self,
         order_id: str,
         *,
+        expiration_date: Union[str, datetime, None] | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
         services: Iterable[order_update_params.Service] | Omit = omit,
         status: Literal[
@@ -1089,6 +1099,9 @@ class AsyncOrdersResource(AsyncAPIResource):
         metadata, and modifying order item services.
 
         Args:
+          expiration_date: Order expiration date (ISO 8601 format). Set to null to remove the expiration
+              date.
+
           metadata: Arbitrary metadata to update on the order (non-indexed passthrough, <=10KB when
               JSON stringified)
 
@@ -1106,6 +1119,7 @@ class AsyncOrdersResource(AsyncAPIResource):
             path_template("/v1/orders/{order_id}", order_id=order_id),
             body=await async_maybe_transform(
                 {
+                    "expiration_date": expiration_date,
                     "metadata": metadata,
                     "services": services,
                     "status": status,
@@ -1235,6 +1249,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         brand_id: str | Omit = omit,
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
+        expiration_date: str | Omit = omit,
         metadata: Dict[str, object] | Omit = omit,
         priority: Literal["normal", "high"] | Omit = omit,
         provider_created: bool | Omit = omit,
@@ -1266,6 +1281,8 @@ class AsyncOrdersResource(AsyncAPIResource):
           due_date: Due date for the order (date or date-time ISO string)
 
           due_dates: Array of due dates per service
+
+          expiration_date: Expiration date for the order (date or date-time ISO string)
 
           metadata: Optional arbitrary metadata to store on the order (non-indexed passthrough,
               <=10KB when JSON stringified)
@@ -1300,6 +1317,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                         "brand_id": brand_id,
                         "due_date": due_date,
                         "due_dates": due_dates,
+                        "expiration_date": expiration_date,
                         "metadata": metadata,
                         "priority": priority,
                         "provider_created": provider_created,
