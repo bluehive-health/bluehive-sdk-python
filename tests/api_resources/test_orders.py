@@ -13,7 +13,6 @@ from bluehive.types import (
     OrderCreateResponse,
     OrderUpdateResponse,
     OrderRetrieveResponse,
-    OrderUpdateStatusResponse,
     OrderUploadResultsResponse,
     OrderRetrieveResultsResponse,
     OrderSendForEmployeeResponse,
@@ -774,62 +773,6 @@ class TestOrders:
             assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
         assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    def test_method_update_status(self, client: BlueHive) -> None:
-        order = client.orders.update_status(
-            order_id="orderId",
-            status="order_sent",
-        )
-        assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    def test_method_update_status_with_all_params(self, client: BlueHive) -> None:
-        order = client.orders.update_status(
-            order_id="orderId",
-            status="order_sent",
-            message="message",
-        )
-        assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    def test_raw_response_update_status(self, client: BlueHive) -> None:
-        response = client.orders.with_raw_response.update_status(
-            order_id="orderId",
-            status="order_sent",
-        )
-
-        assert response.is_closed is True
-        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-        order = response.parse()
-        assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    def test_streaming_response_update_status(self, client: BlueHive) -> None:
-        with client.orders.with_streaming_response.update_status(
-            order_id="orderId",
-            status="order_sent",
-        ) as response:
-            assert not response.is_closed
-            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-
-            order = response.parse()
-            assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-        assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    def test_path_params_update_status(self, client: BlueHive) -> None:
-        with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
-            client.orders.with_raw_response.update_status(
-                order_id="",
-                status="order_sent",
-            )
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -1659,62 +1602,6 @@ class TestAsyncOrders:
             assert_matches_type(OrderSendForEmployeeResponse, order, path=["response"])
 
         assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    async def test_method_update_status(self, async_client: AsyncBlueHive) -> None:
-        order = await async_client.orders.update_status(
-            order_id="orderId",
-            status="order_sent",
-        )
-        assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    async def test_method_update_status_with_all_params(self, async_client: AsyncBlueHive) -> None:
-        order = await async_client.orders.update_status(
-            order_id="orderId",
-            status="order_sent",
-            message="message",
-        )
-        assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    async def test_raw_response_update_status(self, async_client: AsyncBlueHive) -> None:
-        response = await async_client.orders.with_raw_response.update_status(
-            order_id="orderId",
-            status="order_sent",
-        )
-
-        assert response.is_closed is True
-        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-        order = await response.parse()
-        assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    async def test_streaming_response_update_status(self, async_client: AsyncBlueHive) -> None:
-        async with async_client.orders.with_streaming_response.update_status(
-            order_id="orderId",
-            status="order_sent",
-        ) as response:
-            assert not response.is_closed
-            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-
-            order = await response.parse()
-            assert_matches_type(OrderUpdateStatusResponse, order, path=["response"])
-
-        assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip(reason="Mock server tests are disabled")
-    @parametrize
-    async def test_path_params_update_status(self, async_client: AsyncBlueHive) -> None:
-        with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
-            await async_client.orders.with_raw_response.update_status(
-                order_id="",
-                status="order_sent",
-            )
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize

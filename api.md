@@ -119,7 +119,6 @@ from bluehive.types import (
     OrderRetrieveResultsResponse,
     OrderScheduleAppointmentResponse,
     OrderSendForEmployeeResponse,
-    OrderUpdateStatusResponse,
     OrderUploadResultsResponse,
 )
 ```
@@ -132,7 +131,6 @@ Methods:
 - <code title="get /v1/orders/{orderId}/results">client.orders.<a href="./src/bluehive/resources/orders.py">retrieve_results</a>(order_id, \*\*<a href="src/bluehive/types/order_retrieve_results_params.py">params</a>) -> <a href="./src/bluehive/types/order_retrieve_results_response.py">OrderRetrieveResultsResponse</a></code>
 - <code title="post /v1/orders/{orderId}/schedule-appointment">client.orders.<a href="./src/bluehive/resources/orders.py">schedule_appointment</a>(order_id, \*\*<a href="src/bluehive/types/order_schedule_appointment_params.py">params</a>) -> <a href="./src/bluehive/types/order_schedule_appointment_response.py">OrderScheduleAppointmentResponse</a></code>
 - <code title="post /v1/orders/send">client.orders.<a href="./src/bluehive/resources/orders.py">send_for_employee</a>(\*\*<a href="src/bluehive/types/order_send_for_employee_params.py">params</a>) -> <a href="./src/bluehive/types/order_send_for_employee_response.py">OrderSendForEmployeeResponse</a></code>
-- <code title="put /v1/orders/{orderId}/status">client.orders.<a href="./src/bluehive/resources/orders.py">update_status</a>(order_id, \*\*<a href="src/bluehive/types/order_update_status_params.py">params</a>) -> <a href="./src/bluehive/types/order_update_status_response.py">OrderUpdateStatusResponse</a></code>
 - <code title="post /v1/orders/{orderId}/upload-results">client.orders.<a href="./src/bluehive/resources/orders.py">upload_results</a>(order_id, \*\*<a href="src/bluehive/types/order_upload_results_params.py">params</a>) -> <a href="./src/bluehive/types/order_upload_results_response.py">OrderUploadResultsResponse</a></code>
 
 # Employees
