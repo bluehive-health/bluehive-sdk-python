@@ -11,7 +11,6 @@ import httpx
 from ..types import (
     order_create_params,
     order_update_params,
-    order_update_status_params,
     order_upload_results_params,
     order_retrieve_results_params,
     order_send_for_employee_params,
@@ -31,7 +30,6 @@ from .._base_client import make_request_options
 from ..types.order_create_response import OrderCreateResponse
 from ..types.order_update_response import OrderUpdateResponse
 from ..types.order_retrieve_response import OrderRetrieveResponse
-from ..types.order_update_status_response import OrderUpdateStatusResponse
 from ..types.order_upload_results_response import OrderUploadResultsResponse
 from ..types.order_retrieve_results_response import OrderRetrieveResultsResponse
 from ..types.order_send_for_employee_response import OrderSendForEmployeeResponse
@@ -635,50 +633,6 @@ class OrdersResource(SyncAPIResource):
                     Any, OrderSendForEmployeeResponse
                 ),  # Union types cannot be passed in as arguments in the type system
             ),
-        )
-
-    def update_status(
-        self,
-        order_id: str,
-        *,
-        status: Literal[
-            "order_sent", "order_accepted", "order_refused", "employee_confirmed", "order_fulfilled", "order_complete"
-        ],
-        message: str | Omit = omit,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> OrderUpdateStatusResponse:
-        """
-        Update the status of an existing order
-
-        Args:
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not order_id:
-            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
-        return self._put(
-            path_template("/v1/orders/{order_id}/status", order_id=order_id),
-            body=maybe_transform(
-                {
-                    "status": status,
-                    "message": message,
-                },
-                order_update_status_params.OrderUpdateStatusParams,
-            ),
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=OrderUpdateStatusResponse,
         )
 
     def upload_results(
@@ -1335,50 +1289,6 @@ class AsyncOrdersResource(AsyncAPIResource):
             ),
         )
 
-    async def update_status(
-        self,
-        order_id: str,
-        *,
-        status: Literal[
-            "order_sent", "order_accepted", "order_refused", "employee_confirmed", "order_fulfilled", "order_complete"
-        ],
-        message: str | Omit = omit,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> OrderUpdateStatusResponse:
-        """
-        Update the status of an existing order
-
-        Args:
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not order_id:
-            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
-        return await self._put(
-            path_template("/v1/orders/{order_id}/status", order_id=order_id),
-            body=await async_maybe_transform(
-                {
-                    "status": status,
-                    "message": message,
-                },
-                order_update_status_params.OrderUpdateStatusParams,
-            ),
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=OrderUpdateStatusResponse,
-        )
-
     async def upload_results(
         self,
         order_id: str,
@@ -1458,9 +1368,6 @@ class OrdersResourceWithRawResponse:
         self.send_for_employee = to_raw_response_wrapper(
             orders.send_for_employee,
         )
-        self.update_status = to_raw_response_wrapper(
-            orders.update_status,
-        )
         self.upload_results = to_raw_response_wrapper(
             orders.upload_results,
         )
@@ -1487,9 +1394,6 @@ class AsyncOrdersResourceWithRawResponse:
         )
         self.send_for_employee = async_to_raw_response_wrapper(
             orders.send_for_employee,
-        )
-        self.update_status = async_to_raw_response_wrapper(
-            orders.update_status,
         )
         self.upload_results = async_to_raw_response_wrapper(
             orders.upload_results,
@@ -1518,9 +1422,6 @@ class OrdersResourceWithStreamingResponse:
         self.send_for_employee = to_streamed_response_wrapper(
             orders.send_for_employee,
         )
-        self.update_status = to_streamed_response_wrapper(
-            orders.update_status,
-        )
         self.upload_results = to_streamed_response_wrapper(
             orders.upload_results,
         )
@@ -1547,9 +1448,6 @@ class AsyncOrdersResourceWithStreamingResponse:
         )
         self.send_for_employee = async_to_streamed_response_wrapper(
             orders.send_for_employee,
-        )
-        self.update_status = async_to_streamed_response_wrapper(
-            orders.update_status,
         )
         self.upload_results = async_to_streamed_response_wrapper(
             orders.upload_results,
