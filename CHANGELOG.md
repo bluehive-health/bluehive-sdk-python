@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.39 (2026-06-17)
+
+Full Changelog: [v0.1.0-alpha.38...v0.1.0-alpha.39](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.38...v0.1.0-alpha.39)
+
+### Features
+
+* **api:** api update ([fec7fe9](https://github.com/bluehive-health/bluehive-sdk-python/commit/fec7fe91b5ca7eeb6b3c0cdfdd2ae55f3f656b10))
+
 ## 0.1.0-alpha.38 (2026-06-03)
 
 Full Changelog: [v0.1.0-alpha.37...v0.1.0-alpha.38](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.37...v0.1.0-alpha.38)
