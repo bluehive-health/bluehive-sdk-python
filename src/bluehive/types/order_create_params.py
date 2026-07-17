@@ -43,6 +43,9 @@ class Variant0(TypedDict, total=False):
 
     brand_id: Annotated[str, PropertyInfo(alias="brandId")]
 
+    bundle_ids: Annotated[Dict[str, str], PropertyInfo(alias="bundleIds")]
+    """Map of serviceId to bundleId for per-bundle pricing disambiguation"""
+
     due_date: Annotated[Union[str, datetime], PropertyInfo(alias="dueDate", format="iso8601")]
 
     due_dates: Annotated[SequenceNotStr[Union[str, datetime]], PropertyInfo(alias="dueDates", format="iso8601")]
@@ -124,6 +127,9 @@ class Variant1(TypedDict, total=False):
     _id: str
 
     brand_id: Annotated[str, PropertyInfo(alias="brandId")]
+
+    bundle_ids: Annotated[Dict[str, str], PropertyInfo(alias="bundleIds")]
+    """Map of serviceId to bundleId for per-bundle pricing disambiguation"""
 
     due_date: Annotated[Union[str, datetime], PropertyInfo(alias="dueDate", format="iso8601")]
 
@@ -211,6 +217,9 @@ class Variant2(TypedDict, total=False):
 
     brand_id: Annotated[str, PropertyInfo(alias="brandId")]
 
+    bundle_ids: Annotated[Dict[str, str], PropertyInfo(alias="bundleIds")]
+    """Map of serviceId to bundleId for per-bundle pricing disambiguation"""
+
     due_date: Annotated[Union[str, datetime], PropertyInfo(alias="dueDate", format="iso8601")]
 
     due_dates: Annotated[SequenceNotStr[Union[str, datetime]], PropertyInfo(alias="dueDates", format="iso8601")]
@@ -294,6 +303,9 @@ class Variant3(TypedDict, total=False):
     _id: str
 
     brand_id: Annotated[str, PropertyInfo(alias="brandId")]
+
+    bundle_ids: Annotated[Dict[str, str], PropertyInfo(alias="bundleIds")]
+    """Map of serviceId to bundleId for per-bundle pricing disambiguation"""
 
     due_date: Annotated[Union[str, datetime], PropertyInfo(alias="dueDate", format="iso8601")]
 
