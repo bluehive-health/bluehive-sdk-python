@@ -68,6 +68,7 @@ class OrdersResource(SyncAPIResource):
         services: Iterable[order_create_params.Variant0Service],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_id: str | Omit = omit,
@@ -94,6 +95,8 @@ class OrdersResource(SyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -117,6 +120,7 @@ class OrdersResource(SyncAPIResource):
         services: Iterable[order_create_params.Variant1Service],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_ids: SequenceNotStr[str] | Omit = omit,
@@ -144,6 +148,8 @@ class OrdersResource(SyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -168,6 +174,7 @@ class OrdersResource(SyncAPIResource):
         services_ids: SequenceNotStr[str],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_ids: SequenceNotStr[str] | Omit = omit,
@@ -194,6 +201,8 @@ class OrdersResource(SyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -218,6 +227,7 @@ class OrdersResource(SyncAPIResource):
         services_ids: SequenceNotStr[str],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_id: str | Omit = omit,
@@ -244,6 +254,8 @@ class OrdersResource(SyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -281,6 +293,7 @@ class OrdersResource(SyncAPIResource):
         | Omit = omit,
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_id: str | Omit = omit,
@@ -317,6 +330,7 @@ class OrdersResource(SyncAPIResource):
                         "services": services,
                         "_id": _id,
                         "brand_id": brand_id,
+                        "bundle_ids": bundle_ids,
                         "due_date": due_date,
                         "due_dates": due_dates,
                         "employee_id": employee_id,
@@ -722,6 +736,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         services: Iterable[order_create_params.Variant0Service],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_id: str | Omit = omit,
@@ -748,6 +763,8 @@ class AsyncOrdersResource(AsyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -771,6 +788,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         services: Iterable[order_create_params.Variant1Service],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_ids: SequenceNotStr[str] | Omit = omit,
@@ -798,6 +816,8 @@ class AsyncOrdersResource(AsyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -822,6 +842,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         services_ids: SequenceNotStr[str],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_ids: SequenceNotStr[str] | Omit = omit,
@@ -848,6 +869,8 @@ class AsyncOrdersResource(AsyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -872,6 +895,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         services_ids: SequenceNotStr[str],
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_id: str | Omit = omit,
@@ -898,6 +922,8 @@ class AsyncOrdersResource(AsyncAPIResource):
         Order.SendOrder methods.
 
         Args:
+          bundle_ids: Map of serviceId to bundleId for per-bundle pricing disambiguation
+
           metadata: Optional arbitrary metadata (<=10KB when JSON stringified)
 
           priority: Order priority level
@@ -935,6 +961,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         | Omit = omit,
         _id: str | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: Union[str, datetime] | Omit = omit,
         due_dates: SequenceNotStr[Union[str, datetime]] | Omit = omit,
         employee_id: str | Omit = omit,
@@ -971,6 +998,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                         "services": services,
                         "_id": _id,
                         "brand_id": brand_id,
+                        "bundle_ids": bundle_ids,
                         "due_date": due_date,
                         "due_dates": due_dates,
                         "employee_id": employee_id,
