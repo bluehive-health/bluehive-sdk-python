@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.40 (2026-07-18)
+
+Full Changelog: [v0.1.0-alpha.39...v0.1.0-alpha.40](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.39...v0.1.0-alpha.40)
+
+### Features
+
+* **api:** api update ([0068785](https://github.com/bluehive-health/bluehive-sdk-python/commit/006878556dba1cdc346a982a773367785bda7d0f))
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([dfb67e1](https://github.com/bluehive-health/bluehive-sdk-python/commit/dfb67e1642d2a48d4b2ee88bebd7bdf5e5adbe45))
+
 ## 0.1.0-alpha.39 (2026-06-17)
 
 Full Changelog: [v0.1.0-alpha.38...v0.1.0-alpha.39](https://github.com/bluehive-health/bluehive-sdk-python/compare/v0.1.0-alpha.38...v0.1.0-alpha.39)
