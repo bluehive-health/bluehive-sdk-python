@@ -560,6 +560,7 @@ class OrdersResource(SyncAPIResource):
         services_ids: SequenceNotStr[str],
         login_token: str,
         user_id: str,
+        acknowledged_duplicate_order_ids: SequenceNotStr[str] | Omit = omit,
         brand_id: str | Omit = omit,
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
@@ -589,6 +590,9 @@ class OrdersResource(SyncAPIResource):
           providers_ids: Array mapping each service (by index) to a provider; serviceId optional
 
           services_ids: Array of service IDs to include in the order
+
+          acknowledged_duplicate_order_ids: Order IDs from a prior 409 DUPLICATE_OPEN_ORDER response the user chose to
+              override; new duplicates still trigger a fresh 409
 
           brand_id: Brand ID for branded orders
 
@@ -628,6 +632,7 @@ class OrdersResource(SyncAPIResource):
                         "employer_id": employer_id,
                         "providers_ids": providers_ids,
                         "services_ids": services_ids,
+                        "acknowledged_duplicate_order_ids": acknowledged_duplicate_order_ids,
                         "brand_id": brand_id,
                         "due_date": due_date,
                         "due_dates": due_dates,
@@ -1228,6 +1233,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         services_ids: SequenceNotStr[str],
         login_token: str,
         user_id: str,
+        acknowledged_duplicate_order_ids: SequenceNotStr[str] | Omit = omit,
         brand_id: str | Omit = omit,
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
@@ -1257,6 +1263,9 @@ class AsyncOrdersResource(AsyncAPIResource):
           providers_ids: Array mapping each service (by index) to a provider; serviceId optional
 
           services_ids: Array of service IDs to include in the order
+
+          acknowledged_duplicate_order_ids: Order IDs from a prior 409 DUPLICATE_OPEN_ORDER response the user chose to
+              override; new duplicates still trigger a fresh 409
 
           brand_id: Brand ID for branded orders
 
@@ -1296,6 +1305,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                         "employer_id": employer_id,
                         "providers_ids": providers_ids,
                         "services_ids": services_ids,
+                        "acknowledged_duplicate_order_ids": acknowledged_duplicate_order_ids,
                         "brand_id": brand_id,
                         "due_date": due_date,
                         "due_dates": due_dates,
