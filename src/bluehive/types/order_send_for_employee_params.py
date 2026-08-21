@@ -28,6 +28,14 @@ class OrderSendForEmployeeParams(TypedDict, total=False):
 
     user_id: Required[Annotated[str, PropertyInfo(alias="user-id")]]
 
+    acknowledged_duplicate_order_ids: Annotated[
+        SequenceNotStr[str], PropertyInfo(alias="acknowledgedDuplicateOrderIds")
+    ]
+    """
+    Order IDs from a prior 409 DUPLICATE_OPEN_ORDER response the user chose to
+    override; new duplicates still trigger a fresh 409
+    """
+
     brand_id: Annotated[str, PropertyInfo(alias="brandId")]
     """Brand ID for branded orders"""
 
