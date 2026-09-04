@@ -39,6 +39,12 @@ class OrderSendForEmployeeParams(TypedDict, total=False):
     brand_id: Annotated[str, PropertyInfo(alias="brandId")]
     """Brand ID for branded orders"""
 
+    bundle_ids: Annotated[Dict[str, str], PropertyInfo(alias="bundleIds")]
+    """
+    Per-service bundle mapping (serviceId → bundleId) used to scope the OBR-18
+    parent bill id lookup to the ordered bundle.
+    """
+
     due_date: Annotated[str, PropertyInfo(alias="dueDate")]
     """Due date for the order (date or date-time ISO string)"""
 
