@@ -562,6 +562,7 @@ class OrdersResource(SyncAPIResource):
         user_id: str,
         acknowledged_duplicate_order_ids: SequenceNotStr[str] | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
         expiration_date: str | Omit = omit,
@@ -595,6 +596,9 @@ class OrdersResource(SyncAPIResource):
               override; new duplicates still trigger a fresh 409
 
           brand_id: Brand ID for branded orders
+
+          bundle_ids: Per-service bundle mapping (serviceId → bundleId) used to scope the OBR-18
+              parent bill id lookup to the ordered bundle.
 
           due_date: Due date for the order (date or date-time ISO string)
 
@@ -634,6 +638,7 @@ class OrdersResource(SyncAPIResource):
                         "services_ids": services_ids,
                         "acknowledged_duplicate_order_ids": acknowledged_duplicate_order_ids,
                         "brand_id": brand_id,
+                        "bundle_ids": bundle_ids,
                         "due_date": due_date,
                         "due_dates": due_dates,
                         "expiration_date": expiration_date,
@@ -1235,6 +1240,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         user_id: str,
         acknowledged_duplicate_order_ids: SequenceNotStr[str] | Omit = omit,
         brand_id: str | Omit = omit,
+        bundle_ids: Dict[str, str] | Omit = omit,
         due_date: str | Omit = omit,
         due_dates: SequenceNotStr[str] | Omit = omit,
         expiration_date: str | Omit = omit,
@@ -1268,6 +1274,9 @@ class AsyncOrdersResource(AsyncAPIResource):
               override; new duplicates still trigger a fresh 409
 
           brand_id: Brand ID for branded orders
+
+          bundle_ids: Per-service bundle mapping (serviceId → bundleId) used to scope the OBR-18
+              parent bill id lookup to the ordered bundle.
 
           due_date: Due date for the order (date or date-time ISO string)
 
@@ -1307,6 +1316,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                         "services_ids": services_ids,
                         "acknowledged_duplicate_order_ids": acknowledged_duplicate_order_ids,
                         "brand_id": brand_id,
+                        "bundle_ids": bundle_ids,
                         "due_date": due_date,
                         "due_dates": due_dates,
                         "expiration_date": expiration_date,
