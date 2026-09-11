@@ -663,9 +663,9 @@ class OrdersResource(SyncAPIResource):
         self,
         order_id: str,
         *,
-        captcha_token: str,
         order_access_code: str,
         service_id: str,
+        captcha_token: str | Omit = omit,
         dob: str | Omit = omit,
         file_ids: SequenceNotStr[str] | Omit = omit,
         files: Iterable[order_upload_results_params.File] | Omit = omit,
@@ -680,7 +680,10 @@ class OrdersResource(SyncAPIResource):
         """Upload test results for a specific order item.
 
         Supports both existing fileIds
-        and base64 encoded files. Requires order access code and employee verification.
+        and base64 encoded files. Public SPA requests require an order access code and
+        CAPTCHA. Delegated requests require an internal API key and
+        x-provider-spa-session, send base64 file contents, and the API stores them in
+        BlueHive file storage.
 
         Args:
           dob: Date of birth in YYYY-MM-DD format
@@ -699,9 +702,9 @@ class OrdersResource(SyncAPIResource):
             path_template("/v1/orders/{order_id}/upload-results", order_id=order_id),
             body=maybe_transform(
                 {
-                    "captcha_token": captcha_token,
                     "order_access_code": order_access_code,
                     "service_id": service_id,
+                    "captcha_token": captcha_token,
                     "dob": dob,
                     "file_ids": file_ids,
                     "files": files,
@@ -1341,9 +1344,9 @@ class AsyncOrdersResource(AsyncAPIResource):
         self,
         order_id: str,
         *,
-        captcha_token: str,
         order_access_code: str,
         service_id: str,
+        captcha_token: str | Omit = omit,
         dob: str | Omit = omit,
         file_ids: SequenceNotStr[str] | Omit = omit,
         files: Iterable[order_upload_results_params.File] | Omit = omit,
@@ -1358,7 +1361,10 @@ class AsyncOrdersResource(AsyncAPIResource):
         """Upload test results for a specific order item.
 
         Supports both existing fileIds
-        and base64 encoded files. Requires order access code and employee verification.
+        and base64 encoded files. Public SPA requests require an order access code and
+        CAPTCHA. Delegated requests require an internal API key and
+        x-provider-spa-session, send base64 file contents, and the API stores them in
+        BlueHive file storage.
 
         Args:
           dob: Date of birth in YYYY-MM-DD format
@@ -1377,9 +1383,9 @@ class AsyncOrdersResource(AsyncAPIResource):
             path_template("/v1/orders/{order_id}/upload-results", order_id=order_id),
             body=await async_maybe_transform(
                 {
-                    "captcha_token": captcha_token,
                     "order_access_code": order_access_code,
                     "service_id": service_id,
+                    "captcha_token": captcha_token,
                     "dob": dob,
                     "file_ids": file_ids,
                     "files": files,

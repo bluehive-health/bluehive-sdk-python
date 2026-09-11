@@ -12,11 +12,11 @@ __all__ = ["OrderUploadResultsParams", "File"]
 
 
 class OrderUploadResultsParams(TypedDict, total=False):
-    captcha_token: Required[Annotated[str, PropertyInfo(alias="captchaToken")]]
-
     order_access_code: Required[Annotated[str, PropertyInfo(alias="orderAccessCode")]]
 
     service_id: Required[Annotated[str, PropertyInfo(alias="serviceId")]]
+
+    captcha_token: Annotated[str, PropertyInfo(alias="captchaToken")]
 
     dob: str
     """Date of birth in YYYY-MM-DD format"""
