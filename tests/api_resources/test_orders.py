@@ -785,7 +785,6 @@ class TestOrders:
     def test_method_upload_results(self, client: BlueHive) -> None:
         order = client.orders.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
         )
@@ -796,9 +795,9 @@ class TestOrders:
     def test_method_upload_results_with_all_params(self, client: BlueHive) -> None:
         order = client.orders.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
+            captcha_token="captchaToken",
             dob="7321-69-10",
             file_ids=["x"],
             files=[
@@ -817,7 +816,6 @@ class TestOrders:
     def test_raw_response_upload_results(self, client: BlueHive) -> None:
         response = client.orders.with_raw_response.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
         )
@@ -832,7 +830,6 @@ class TestOrders:
     def test_streaming_response_upload_results(self, client: BlueHive) -> None:
         with client.orders.with_streaming_response.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
         ) as response:
@@ -850,7 +847,6 @@ class TestOrders:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             client.orders.with_raw_response.upload_results(
                 order_id="",
-                captcha_token="x",
                 order_access_code="x",
                 service_id="x",
             )
@@ -1620,7 +1616,6 @@ class TestAsyncOrders:
     async def test_method_upload_results(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
         )
@@ -1631,9 +1626,9 @@ class TestAsyncOrders:
     async def test_method_upload_results_with_all_params(self, async_client: AsyncBlueHive) -> None:
         order = await async_client.orders.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
+            captcha_token="captchaToken",
             dob="7321-69-10",
             file_ids=["x"],
             files=[
@@ -1652,7 +1647,6 @@ class TestAsyncOrders:
     async def test_raw_response_upload_results(self, async_client: AsyncBlueHive) -> None:
         response = await async_client.orders.with_raw_response.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
         )
@@ -1667,7 +1661,6 @@ class TestAsyncOrders:
     async def test_streaming_response_upload_results(self, async_client: AsyncBlueHive) -> None:
         async with async_client.orders.with_streaming_response.upload_results(
             order_id="orderId",
-            captcha_token="x",
             order_access_code="x",
             service_id="x",
         ) as response:
@@ -1685,7 +1678,6 @@ class TestAsyncOrders:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             await async_client.orders.with_raw_response.upload_results(
                 order_id="",
-                captcha_token="x",
                 order_access_code="x",
                 service_id="x",
             )
