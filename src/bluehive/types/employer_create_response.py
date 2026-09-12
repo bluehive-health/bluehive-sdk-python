@@ -1,6 +1,7 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 from typing import Dict, List, Optional
+from typing_extensions import Literal
 
 from pydantic import Field as FieldInfo
 
@@ -29,5 +30,7 @@ class EmployerCreateResponse(BaseModel):
     employee_consent: Optional[bool] = FieldInfo(alias="employeeConsent", default=None)
 
     onsite_clinic: Optional[bool] = FieldInfo(alias="onsiteClinic", default=None)
+
+    status: Optional[Literal["active", "waitlisted"]] = None
 
     website: Optional[str] = None
