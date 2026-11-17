@@ -9,7 +9,13 @@ import pytest
 
 from bluehive import BlueHive, AsyncBlueHive
 from tests.utils import assert_matches_type
-from bluehive.types import FaxSendResponse, FaxListProvidersResponse, FaxRetrieveStatusResponse
+from bluehive.types import (
+    FaxSendResponse,
+    FaxSendStoredResponse,
+    FaxListProvidersResponse,
+    FaxRetrieveStatusResponse,
+    FaxRetrieveSubscriptionHealthResponse,
+)
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
@@ -149,6 +155,91 @@ class TestFax:
 
         assert cast(Any, response.is_closed) is True
 
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_send_stored(self, client: BlueHive) -> None:
+        fax = client.fax.send_stored(
+            "faxId",
+            to="to",
+        )
+        assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_send_stored_with_all_params(self, client: BlueHive) -> None:
+        fax = client.fax.send_stored(
+            "faxId",
+            to="to",
+            from_="from_",
+            subject="subject",
+        )
+        assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_raw_response_send_stored(self, client: BlueHive) -> None:
+        response = client.fax.with_raw_response.send_stored(
+            "faxId",
+            to="to",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        fax = response.parse()
+        assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_streaming_response_send_stored(self, client: BlueHive) -> None:
+        with client.fax.with_streaming_response.send_stored(
+            "faxId",
+            to="to",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            fax = response.parse()
+            assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_path_params_send_stored(self, client: BlueHive) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `fax_id` but received ''"):
+            client.fax.with_raw_response.send_stored(
+                "",
+                to="to",
+            )
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_retrieve_subscription_health(self, client: BlueHive) -> None:
+        fax = client.fax.retrieve_subscription_health()
+        assert_matches_type(FaxRetrieveSubscriptionHealthResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_raw_response_retrieve_subscription_health(self, client: BlueHive) -> None:
+        response = client.fax.with_raw_response.retrieve_subscription_health()
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        fax = response.parse()
+        assert_matches_type(FaxRetrieveSubscriptionHealthResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_streaming_response_retrieve_subscription_health(self, client: BlueHive) -> None:
+        with client.fax.with_streaming_response.retrieve_subscription_health() as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            fax = response.parse()
+            assert_matches_type(FaxRetrieveSubscriptionHealthResponse, fax, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
 
 class TestAsyncFax:
     parametrize = pytest.mark.parametrize(
@@ -284,5 +375,90 @@ class TestAsyncFax:
 
             fax = await response.parse()
             assert_matches_type(FaxSendResponse, fax, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_send_stored(self, async_client: AsyncBlueHive) -> None:
+        fax = await async_client.fax.send_stored(
+            "faxId",
+            to="to",
+        )
+        assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_send_stored_with_all_params(self, async_client: AsyncBlueHive) -> None:
+        fax = await async_client.fax.send_stored(
+            "faxId",
+            to="to",
+            from_="from_",
+            subject="subject",
+        )
+        assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_raw_response_send_stored(self, async_client: AsyncBlueHive) -> None:
+        response = await async_client.fax.with_raw_response.send_stored(
+            "faxId",
+            to="to",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        fax = await response.parse()
+        assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_streaming_response_send_stored(self, async_client: AsyncBlueHive) -> None:
+        async with async_client.fax.with_streaming_response.send_stored(
+            "faxId",
+            to="to",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            fax = await response.parse()
+            assert_matches_type(FaxSendStoredResponse, fax, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_path_params_send_stored(self, async_client: AsyncBlueHive) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `fax_id` but received ''"):
+            await async_client.fax.with_raw_response.send_stored(
+                "",
+                to="to",
+            )
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_retrieve_subscription_health(self, async_client: AsyncBlueHive) -> None:
+        fax = await async_client.fax.retrieve_subscription_health()
+        assert_matches_type(FaxRetrieveSubscriptionHealthResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_raw_response_retrieve_subscription_health(self, async_client: AsyncBlueHive) -> None:
+        response = await async_client.fax.with_raw_response.retrieve_subscription_health()
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        fax = await response.parse()
+        assert_matches_type(FaxRetrieveSubscriptionHealthResponse, fax, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_streaming_response_retrieve_subscription_health(self, async_client: AsyncBlueHive) -> None:
+        async with async_client.fax.with_streaming_response.retrieve_subscription_health() as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            fax = await response.parse()
+            assert_matches_type(FaxRetrieveSubscriptionHealthResponse, fax, path=["response"])
 
         assert cast(Any, response.is_closed) is True

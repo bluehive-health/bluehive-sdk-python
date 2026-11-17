@@ -9,7 +9,7 @@ import pytest
 
 from bluehive import BlueHive, AsyncBlueHive
 from tests.utils import assert_matches_type
-from bluehive.types import ProviderLookupResponse
+from bluehive.types import ProviderLookupResponse, ProviderSearchResponse
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
@@ -56,6 +56,54 @@ class TestProviders:
 
         assert cast(Any, response.is_closed) is True
 
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_search(self, client: BlueHive) -> None:
+        provider = client.providers.search(
+            zipcode="zipcode",
+        )
+        assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_method_search_with_all_params(self, client: BlueHive) -> None:
+        provider = client.providers.search(
+            zipcode="zipcode",
+            radius="radius",
+            services="services",
+            provider_id="provider_id",
+            employer_id="employer_id",
+            brand_id="brand_id",
+            limit="limit",
+        )
+        assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_raw_response_search(self, client: BlueHive) -> None:
+        response = client.providers.with_raw_response.search(
+            zipcode="zipcode",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        provider = response.parse()
+        assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    def test_streaming_response_search(self, client: BlueHive) -> None:
+        with client.providers.with_streaming_response.search(
+            zipcode="zipcode",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            provider = response.parse()
+            assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
 
 class TestAsyncProviders:
     parametrize = pytest.mark.parametrize(
@@ -98,5 +146,53 @@ class TestAsyncProviders:
 
             provider = await response.parse()
             assert_matches_type(ProviderLookupResponse, provider, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_search(self, async_client: AsyncBlueHive) -> None:
+        provider = await async_client.providers.search(
+            zipcode="zipcode",
+        )
+        assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_method_search_with_all_params(self, async_client: AsyncBlueHive) -> None:
+        provider = await async_client.providers.search(
+            zipcode="zipcode",
+            radius="radius",
+            services="services",
+            provider_id="provider_id",
+            employer_id="employer_id",
+            brand_id="brand_id",
+            limit="limit",
+        )
+        assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_raw_response_search(self, async_client: AsyncBlueHive) -> None:
+        response = await async_client.providers.with_raw_response.search(
+            zipcode="zipcode",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        provider = await response.parse()
+        assert_matches_type(ProviderSearchResponse, provider, path=["response"])
+
+    @pytest.mark.skip(reason="Mock server tests are disabled")
+    @parametrize
+    async def test_streaming_response_search(self, async_client: AsyncBlueHive) -> None:
+        async with async_client.providers.with_streaming_response.search(
+            zipcode="zipcode",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            provider = await response.parse()
+            assert_matches_type(ProviderSearchResponse, provider, path=["response"])
 
         assert cast(Any, response.is_closed) is True
