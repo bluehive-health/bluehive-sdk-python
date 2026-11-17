@@ -27,12 +27,13 @@ Methods:
 Types:
 
 ```python
-from bluehive.types import ProviderLookupResponse
+from bluehive.types import ProviderLookupResponse, ProviderSearchResponse
 ```
 
 Methods:
 
 - <code title="get /v1/providers/lookup">client.providers.<a href="./src/bluehive/resources/providers.py">lookup</a>(\*\*<a href="src/bluehive/types/provider_lookup_params.py">params</a>) -> <a href="./src/bluehive/types/provider_lookup_response.py">ProviderLookupResponse</a></code>
+- <code title="get /v1/providers/search">client.providers.<a href="./src/bluehive/resources/providers.py">search</a>(\*\*<a href="src/bluehive/types/provider_search_params.py">params</a>) -> <a href="./src/bluehive/types/provider_search_response.py">ProviderSearchResponse</a></code>
 
 # Database
 
@@ -51,7 +52,7 @@ Methods:
 Types:
 
 ```python
-from bluehive.types import FaxListProvidersResponse, FaxRetrieveStatusResponse, FaxSendResponse
+from bluehive.types import FaxListProvidersResponse, FaxRetrieveStatusResponse, FaxSendResponse, FaxSendStoredResponse, FaxRetrieveSubscriptionHealthResponse
 ```
 
 Methods:
@@ -59,6 +60,8 @@ Methods:
 - <code title="get /v1/fax/providers">client.fax.<a href="./src/bluehive/resources/fax.py">list_providers</a>() -> <a href="./src/bluehive/types/fax_list_providers_response.py">FaxListProvidersResponse</a></code>
 - <code title="get /v1/fax/status/{id}">client.fax.<a href="./src/bluehive/resources/fax.py">retrieve_status</a>(id) -> <a href="./src/bluehive/types/fax_retrieve_status_response.py">FaxRetrieveStatusResponse</a></code>
 - <code title="post /v1/fax/send">client.fax.<a href="./src/bluehive/resources/fax.py">send</a>(\*\*<a href="src/bluehive/types/fax_send_params.py">params</a>) -> <a href="./src/bluehive/types/fax_send_response.py">FaxSendResponse</a></code>
+- <code title="post /v1/fax/{faxId}/send">client.fax.<a href="./src/bluehive/resources/fax.py">send_stored</a>(fax_id, \*\*<a href="src/bluehive/types/fax_send_stored_params.py">params</a>) -> <a href="./src/bluehive/types/fax_send_stored_response.py">FaxSendStoredResponse</a></code>
+- <code title="get /v1/fax/subscriptions/health">client.fax.<a href="./src/bluehive/resources/fax.py">retrieve_subscription_health</a>() -> <a href="./src/bluehive/types/fax_retrieve_subscription_health_response.py">FaxRetrieveSubscriptionHealthResponse</a></code>
 
 # Employers
 
@@ -100,12 +103,14 @@ Methods:
 Types:
 
 ```python
-from bluehive.types import Hl7SendResultsResponse
+from bluehive.types import Hl7SendResultsResponse, Hl7ProcessResponse, Hl7ReplayResponse
 ```
 
 Methods:
 
 - <code title="post /v1/hl7/results">client.hl7.<a href="./src/bluehive/resources/hl7.py">send_results</a>(\*\*<a href="src/bluehive/types/hl7_send_results_params.py">params</a>) -> str</code>
+- <code title="post /v1/hl7">client.hl7.<a href="./src/bluehive/resources/hl7.py">process</a>(\*\*<a href="src/bluehive/types/hl7_process_params.py">params</a>) -> <a href="./src/bluehive/types/hl7_process_response.py">Hl7ProcessResponse</a></code>
+- <code title="post /v1/hl7/replay/{logId}">client.hl7.<a href="./src/bluehive/resources/hl7.py">replay</a>(log_id, \*\*<a href="src/bluehive/types/hl7_replay_params.py">params</a>) -> <a href="./src/bluehive/types/hl7_replay_response.py">Hl7ReplayResponse</a></code>
 
 # Orders
 
@@ -120,6 +125,9 @@ from bluehive.types import (
     OrderScheduleAppointmentResponse,
     OrderSendForEmployeeResponse,
     OrderUploadResultsResponse,
+    OrderCancelResponse,
+    OrderUpdateStatusResponse,
+    OrderSearchItemsResponse,
 )
 ```
 
@@ -132,6 +140,9 @@ Methods:
 - <code title="post /v1/orders/{orderId}/schedule-appointment">client.orders.<a href="./src/bluehive/resources/orders.py">schedule_appointment</a>(order_id, \*\*<a href="src/bluehive/types/order_schedule_appointment_params.py">params</a>) -> <a href="./src/bluehive/types/order_schedule_appointment_response.py">OrderScheduleAppointmentResponse</a></code>
 - <code title="post /v1/orders/send">client.orders.<a href="./src/bluehive/resources/orders.py">send_for_employee</a>(\*\*<a href="src/bluehive/types/order_send_for_employee_params.py">params</a>) -> <a href="./src/bluehive/types/order_send_for_employee_response.py">OrderSendForEmployeeResponse</a></code>
 - <code title="post /v1/orders/{orderId}/upload-results">client.orders.<a href="./src/bluehive/resources/orders.py">upload_results</a>(order_id, \*\*<a href="src/bluehive/types/order_upload_results_params.py">params</a>) -> <a href="./src/bluehive/types/order_upload_results_response.py">OrderUploadResultsResponse</a></code>
+- <code title="post /v1/orders/{orderId}/cancel">client.orders.<a href="./src/bluehive/resources/orders.py">cancel</a>(order_id) -> <a href="./src/bluehive/types/order_cancel_response.py">OrderCancelResponse</a></code>
+- <code title="put /v1/orders/{orderId}/status">client.orders.<a href="./src/bluehive/resources/orders.py">update_status</a>(order_id, \*\*<a href="src/bluehive/types/order_update_status_params.py">params</a>) -> <a href="./src/bluehive/types/order_update_status_response.py">OrderUpdateStatusResponse</a></code>
+- <code title="get /v1/orderItems">client.orders.<a href="./src/bluehive/resources/orders.py">search_items</a>(\*\*<a href="src/bluehive/types/order_search_items_params.py">params</a>) -> <a href="./src/bluehive/types/order_search_items_response.py">OrderSearchItemsResponse</a></code>
 
 # Employees
 

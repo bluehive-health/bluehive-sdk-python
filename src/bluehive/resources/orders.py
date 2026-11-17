@@ -11,6 +11,8 @@ import httpx
 from ..types import (
     order_create_params,
     order_update_params,
+    order_search_items_params,
+    order_update_status_params,
     order_upload_results_params,
     order_retrieve_results_params,
     order_send_for_employee_params,
@@ -27,9 +29,12 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
+from ..types.order_cancel_response import OrderCancelResponse
 from ..types.order_create_response import OrderCreateResponse
 from ..types.order_update_response import OrderUpdateResponse
 from ..types.order_retrieve_response import OrderRetrieveResponse
+from ..types.order_search_items_response import OrderSearchItemsResponse
+from ..types.order_update_status_response import OrderUpdateStatusResponse
 from ..types.order_upload_results_response import OrderUploadResultsResponse
 from ..types.order_retrieve_results_response import OrderRetrieveResultsResponse
 from ..types.order_send_for_employee_response import OrderSendForEmployeeResponse
@@ -718,6 +723,189 @@ class OrdersResource(SyncAPIResource):
             cast_to=OrderUploadResultsResponse,
         )
 
+    def cancel(
+        self,
+        order_id: str,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> OrderCancelResponse:
+        """
+        Cancel a specific order by its orderId.
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not order_id:
+            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
+        return self._post(
+            path_template("/v1/orders/{order_id}/cancel", order_id=order_id),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=OrderCancelResponse,
+        )
+
+    def update_status(
+        self,
+        order_id: str,
+        *,
+        status: Literal[
+            "order_sent", "order_accepted", "order_refused", "employee_confirmed", "order_fulfilled", "order_complete"
+        ],
+        message: str | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> OrderUpdateStatusResponse:
+        """
+        Update the status of an existing order
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not order_id:
+            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
+        return self._put(
+            path_template("/v1/orders/{order_id}/status", order_id=order_id),
+            body=maybe_transform(
+                {
+                    "status": status,
+                    "message": message,
+                },
+                order_update_status_params.OrderUpdateStatusParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=OrderUpdateStatusResponse,
+        )
+
+    def search_items(
+        self,
+        *,
+        page: int | Omit = omit,
+        page_size: int | Omit = omit,
+        id: str | Omit = omit,
+        order_number: str | Omit = omit,
+        order_id: str | Omit = omit,
+        employee_id: str | Omit = omit,
+        employer_id: str | Omit = omit,
+        provider_id: str | Omit = omit,
+        order_access_code: str | Omit = omit,
+        service_id: str | Omit = omit,
+        status: str | Omit = omit,
+        id_contains: str | Omit = omit,
+        order_number_contains: str | Omit = omit,
+        order_id_contains: str | Omit = omit,
+        employee_id_contains: str | Omit = omit,
+        order_access_code_contains: str | Omit = omit,
+        since: Union[str, datetime] | Omit = omit,
+        until: Union[str, datetime] | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> OrderSearchItemsResponse:
+        """
+        Search order items with optional filtering and pagination. Results are sorted by creation date descending.
+
+        Args:
+          id: Filter by exact document ID (_id)
+
+          order_number: Filter by exact order number
+
+          order_id: Filter by exact order ID
+
+          employee_id: Filter by exact employee ID
+
+          employer_id: Filter by exact employer ID
+
+          provider_id: Filter by exact provider ID
+
+          order_access_code: Filter by exact order access code
+
+          service_id: Filter by exact service ID within services array
+
+          status: Filter by service status within orderItems
+
+          id_contains: Filter by document ID containing this value (case-insensitive)
+
+          order_number_contains: Filter by order number containing this value (case-insensitive)
+
+          order_id_contains: Filter by order ID containing this value (case-insensitive)
+
+          employee_id_contains: Filter by employee ID containing this value (case-insensitive)
+
+          order_access_code_contains: Filter by order access code containing this value (case-insensitive)
+
+          since: Filter orderItems created after this time
+
+          until: Filter orderItems created before this time
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return self._get(
+            "/v1/orderItems",
+            options=make_request_options(
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=maybe_transform(
+                    {
+                        "page": page,
+                        "page_size": page_size,
+                        "id": id,
+                        "order_number": order_number,
+                        "order_id": order_id,
+                        "employee_id": employee_id,
+                        "employer_id": employer_id,
+                        "provider_id": provider_id,
+                        "order_access_code": order_access_code,
+                        "service_id": service_id,
+                        "status": status,
+                        "id_contains": id_contains,
+                        "order_number_contains": order_number_contains,
+                        "order_id_contains": order_id_contains,
+                        "employee_id_contains": employee_id_contains,
+                        "order_access_code_contains": order_access_code_contains,
+                        "since": since,
+                        "until": until,
+                    },
+                    order_search_items_params.OrderSearchItemsParams,
+                ),
+            ),
+            cast_to=OrderSearchItemsResponse,
+        )
+
 
 class AsyncOrdersResource(AsyncAPIResource):
     @cached_property
@@ -1399,6 +1587,189 @@ class AsyncOrdersResource(AsyncAPIResource):
             cast_to=OrderUploadResultsResponse,
         )
 
+    async def cancel(
+        self,
+        order_id: str,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> OrderCancelResponse:
+        """
+        Cancel a specific order by its orderId.
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not order_id:
+            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
+        return await self._post(
+            path_template("/v1/orders/{order_id}/cancel", order_id=order_id),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=OrderCancelResponse,
+        )
+
+    async def update_status(
+        self,
+        order_id: str,
+        *,
+        status: Literal[
+            "order_sent", "order_accepted", "order_refused", "employee_confirmed", "order_fulfilled", "order_complete"
+        ],
+        message: str | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> OrderUpdateStatusResponse:
+        """
+        Update the status of an existing order
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not order_id:
+            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
+        return await self._put(
+            path_template("/v1/orders/{order_id}/status", order_id=order_id),
+            body=await async_maybe_transform(
+                {
+                    "status": status,
+                    "message": message,
+                },
+                order_update_status_params.OrderUpdateStatusParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=OrderUpdateStatusResponse,
+        )
+
+    async def search_items(
+        self,
+        *,
+        page: int | Omit = omit,
+        page_size: int | Omit = omit,
+        id: str | Omit = omit,
+        order_number: str | Omit = omit,
+        order_id: str | Omit = omit,
+        employee_id: str | Omit = omit,
+        employer_id: str | Omit = omit,
+        provider_id: str | Omit = omit,
+        order_access_code: str | Omit = omit,
+        service_id: str | Omit = omit,
+        status: str | Omit = omit,
+        id_contains: str | Omit = omit,
+        order_number_contains: str | Omit = omit,
+        order_id_contains: str | Omit = omit,
+        employee_id_contains: str | Omit = omit,
+        order_access_code_contains: str | Omit = omit,
+        since: Union[str, datetime] | Omit = omit,
+        until: Union[str, datetime] | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> OrderSearchItemsResponse:
+        """
+        Search order items with optional filtering and pagination. Results are sorted by creation date descending.
+
+        Args:
+          id: Filter by exact document ID (_id)
+
+          order_number: Filter by exact order number
+
+          order_id: Filter by exact order ID
+
+          employee_id: Filter by exact employee ID
+
+          employer_id: Filter by exact employer ID
+
+          provider_id: Filter by exact provider ID
+
+          order_access_code: Filter by exact order access code
+
+          service_id: Filter by exact service ID within services array
+
+          status: Filter by service status within orderItems
+
+          id_contains: Filter by document ID containing this value (case-insensitive)
+
+          order_number_contains: Filter by order number containing this value (case-insensitive)
+
+          order_id_contains: Filter by order ID containing this value (case-insensitive)
+
+          employee_id_contains: Filter by employee ID containing this value (case-insensitive)
+
+          order_access_code_contains: Filter by order access code containing this value (case-insensitive)
+
+          since: Filter orderItems created after this time
+
+          until: Filter orderItems created before this time
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return await self._get(
+            "/v1/orderItems",
+            options=make_request_options(
+                extra_headers=extra_headers,
+                extra_query=extra_query,
+                extra_body=extra_body,
+                timeout=timeout,
+                query=await async_maybe_transform(
+                    {
+                        "page": page,
+                        "page_size": page_size,
+                        "id": id,
+                        "order_number": order_number,
+                        "order_id": order_id,
+                        "employee_id": employee_id,
+                        "employer_id": employer_id,
+                        "provider_id": provider_id,
+                        "order_access_code": order_access_code,
+                        "service_id": service_id,
+                        "status": status,
+                        "id_contains": id_contains,
+                        "order_number_contains": order_number_contains,
+                        "order_id_contains": order_id_contains,
+                        "employee_id_contains": employee_id_contains,
+                        "order_access_code_contains": order_access_code_contains,
+                        "since": since,
+                        "until": until,
+                    },
+                    order_search_items_params.OrderSearchItemsParams,
+                ),
+            ),
+            cast_to=OrderSearchItemsResponse,
+        )
+
 
 class OrdersResourceWithRawResponse:
     def __init__(self, orders: OrdersResource) -> None:
@@ -1424,6 +1795,15 @@ class OrdersResourceWithRawResponse:
         )
         self.upload_results = to_raw_response_wrapper(
             orders.upload_results,
+        )
+        self.cancel = to_raw_response_wrapper(
+            orders.cancel,
+        )
+        self.update_status = to_raw_response_wrapper(
+            orders.update_status,
+        )
+        self.search_items = to_raw_response_wrapper(
+            orders.search_items,
         )
 
 
@@ -1452,6 +1832,15 @@ class AsyncOrdersResourceWithRawResponse:
         self.upload_results = async_to_raw_response_wrapper(
             orders.upload_results,
         )
+        self.cancel = async_to_raw_response_wrapper(
+            orders.cancel,
+        )
+        self.update_status = async_to_raw_response_wrapper(
+            orders.update_status,
+        )
+        self.search_items = async_to_raw_response_wrapper(
+            orders.search_items,
+        )
 
 
 class OrdersResourceWithStreamingResponse:
@@ -1479,6 +1868,15 @@ class OrdersResourceWithStreamingResponse:
         self.upload_results = to_streamed_response_wrapper(
             orders.upload_results,
         )
+        self.cancel = to_streamed_response_wrapper(
+            orders.cancel,
+        )
+        self.update_status = to_streamed_response_wrapper(
+            orders.update_status,
+        )
+        self.search_items = to_streamed_response_wrapper(
+            orders.search_items,
+        )
 
 
 class AsyncOrdersResourceWithStreamingResponse:
@@ -1505,4 +1903,13 @@ class AsyncOrdersResourceWithStreamingResponse:
         )
         self.upload_results = async_to_streamed_response_wrapper(
             orders.upload_results,
+        )
+        self.cancel = async_to_streamed_response_wrapper(
+            orders.cancel,
+        )
+        self.update_status = async_to_streamed_response_wrapper(
+            orders.update_status,
+        )
+        self.search_items = async_to_streamed_response_wrapper(
+            orders.search_items,
         )

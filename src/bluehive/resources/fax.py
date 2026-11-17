@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import httpx
 
-from ..types import fax_send_params
+from ..types import fax_send_params, fax_send_stored_params
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
@@ -17,8 +17,10 @@ from .._response import (
 )
 from .._base_client import make_request_options
 from ..types.fax_send_response import FaxSendResponse
+from ..types.fax_send_stored_response import FaxSendStoredResponse
 from ..types.fax_list_providers_response import FaxListProvidersResponse
 from ..types.fax_retrieve_status_response import FaxRetrieveStatusResponse
+from ..types.fax_retrieve_subscription_health_response import FaxRetrieveSubscriptionHealthResponse
 
 __all__ = ["FaxResource", "AsyncFaxResource"]
 
@@ -148,6 +150,86 @@ class FaxResource(SyncAPIResource):
             cast_to=FaxSendResponse,
         )
 
+    def send_stored(
+        self,
+        fax_id: str,
+        *,
+        to: str,
+        from_: str | Omit = omit,
+        subject: str | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> FaxSendStoredResponse:
+        """
+        Send a previously received/stored fax document to a specified number.
+
+        Args:
+          to: Recipient fax number (E.164 format preferred)
+
+          from_: Sender fax number (optional, uses default if not provided)
+
+          subject: Subject line for the fax
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not fax_id:
+            raise ValueError(f"Expected a non-empty value for `fax_id` but received {fax_id!r}")
+        return self._post(
+            path_template("/v1/fax/{fax_id}/send", fax_id=fax_id),
+            body=maybe_transform(
+                {
+                    "to": to,
+                    "from_": from_,
+                    "subject": subject,
+                },
+                fax_send_stored_params.FaxSendStoredParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=FaxSendStoredResponse,
+        )
+
+    def retrieve_subscription_health(
+        self,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> FaxRetrieveSubscriptionHealthResponse:
+        """
+        Returns webhook subscription status for fax providers.
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return self._get(
+            "/v1/fax/subscriptions/health",
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=FaxRetrieveSubscriptionHealthResponse,
+        )
+
 
 class AsyncFaxResource(AsyncAPIResource):
     @cached_property
@@ -274,6 +356,86 @@ class AsyncFaxResource(AsyncAPIResource):
             cast_to=FaxSendResponse,
         )
 
+    async def send_stored(
+        self,
+        fax_id: str,
+        *,
+        to: str,
+        from_: str | Omit = omit,
+        subject: str | Omit = omit,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> FaxSendStoredResponse:
+        """
+        Send a previously received/stored fax document to a specified number.
+
+        Args:
+          to: Recipient fax number (E.164 format preferred)
+
+          from_: Sender fax number (optional, uses default if not provided)
+
+          subject: Subject line for the fax
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not fax_id:
+            raise ValueError(f"Expected a non-empty value for `fax_id` but received {fax_id!r}")
+        return await self._post(
+            path_template("/v1/fax/{fax_id}/send", fax_id=fax_id),
+            body=await async_maybe_transform(
+                {
+                    "to": to,
+                    "from_": from_,
+                    "subject": subject,
+                },
+                fax_send_stored_params.FaxSendStoredParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=FaxSendStoredResponse,
+        )
+
+    async def retrieve_subscription_health(
+        self,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> FaxRetrieveSubscriptionHealthResponse:
+        """
+        Returns webhook subscription status for fax providers.
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return await self._get(
+            "/v1/fax/subscriptions/health",
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=FaxRetrieveSubscriptionHealthResponse,
+        )
+
 
 class FaxResourceWithRawResponse:
     def __init__(self, fax: FaxResource) -> None:
@@ -287,6 +449,12 @@ class FaxResourceWithRawResponse:
         )
         self.send = to_raw_response_wrapper(
             fax.send,
+        )
+        self.send_stored = to_raw_response_wrapper(
+            fax.send_stored,
+        )
+        self.retrieve_subscription_health = to_raw_response_wrapper(
+            fax.retrieve_subscription_health,
         )
 
 
@@ -303,6 +471,12 @@ class AsyncFaxResourceWithRawResponse:
         self.send = async_to_raw_response_wrapper(
             fax.send,
         )
+        self.send_stored = async_to_raw_response_wrapper(
+            fax.send_stored,
+        )
+        self.retrieve_subscription_health = async_to_raw_response_wrapper(
+            fax.retrieve_subscription_health,
+        )
 
 
 class FaxResourceWithStreamingResponse:
@@ -318,6 +492,12 @@ class FaxResourceWithStreamingResponse:
         self.send = to_streamed_response_wrapper(
             fax.send,
         )
+        self.send_stored = to_streamed_response_wrapper(
+            fax.send_stored,
+        )
+        self.retrieve_subscription_health = to_streamed_response_wrapper(
+            fax.retrieve_subscription_health,
+        )
 
 
 class AsyncFaxResourceWithStreamingResponse:
@@ -332,4 +512,10 @@ class AsyncFaxResourceWithStreamingResponse:
         )
         self.send = async_to_streamed_response_wrapper(
             fax.send,
+        )
+        self.send_stored = async_to_streamed_response_wrapper(
+            fax.send_stored,
+        )
+        self.retrieve_subscription_health = async_to_streamed_response_wrapper(
+            fax.retrieve_subscription_health,
         )
